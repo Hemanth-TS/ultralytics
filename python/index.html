@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../engine/">
+        <link rel="prev" href="../cli/">
       
       
-        <link rel="next" href="../app/">
+        <link rel="next" href="../config/">
       
       <link rel="icon" href="../assets/favicon.ico">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.4">
     
     
       
-        <title>Ultralytics HUB - Ultralytics Docs</title>
+        <title>Python - Ultralytics Docs</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ultralytics-hub" class="md-skip">
+        <a href="#using-trainers" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ultralytics HUB
+              Python
             
           </span>
         </div>
@@ -334,20 +334,20 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-        
-      
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
-        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="true">
           Usage
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -377,11 +377,48 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../python/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Python
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#using-trainers" class="md-nav__link">
+    Using Trainers
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -427,73 +464,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Ultralytics HUB
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../hub/" class="md-nav__link">
         Ultralytics HUB
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-upload-a-dataset" class="md-nav__link">
-    1. Upload a Dataset
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-train-a-model" class="md-nav__link">
-    2. Train a Model
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-deploy-to-real-world" class="md-nav__link">
-    3. Deploy to Real World
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#issues" class="md-nav__link">
-    ❓ Issues
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -701,8 +676,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -711,29 +684,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-upload-a-dataset" class="md-nav__link">
-    1. Upload a Dataset
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-train-a-model" class="md-nav__link">
-    2. Train a Model
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-deploy-to-real-world" class="md-nav__link">
-    3. Deploy to Real World
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#issues" class="md-nav__link">
-    ❓ Issues
+  <a href="#using-trainers" class="md-nav__link">
+    Using Trainers
   </a>
   
 </li>
@@ -753,7 +705,7 @@
                   
 
   
-    <a href="https://github.com/ultralytics/ultralytics/tree/main/docs/hub.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/ultralytics/ultralytics/tree/main/docs/python.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -762,73 +714,145 @@
 
 
 
-<h1 id="ultralytics-hub">Ultralytics HUB</h1>
-<div align="center">
-  <a href="https://hub.ultralytics.com" target="_blank">
-    <img width="1024" src="https://github.com/ultralytics/assets/raw/main/im/ultralytics-hub.png"></a>
-<br>
-  <a href="https://github.com/ultralytics/hub/actions/workflows/ci.yaml">
-    <img src="https://github.com/ultralytics/hub/actions/workflows/ci.yaml/badge.svg" alt="CI CPU"></a>
+  <h1>Python</h1>
+
+<p>This is the simplest way of simply using YOLOv8 models in a Python environment. It can be imported from
+the <code>ultralytics</code> module.</p>
+<div class="admonition example">
+<p class="admonition-title">Train</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">From pretrained(recommanded)</label><label for="__tabbed_1_2">From scratch</label><label for="__tabbed_1_3">Resume</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">ultralytics</span> <span class="kn">import</span> <span class="n">YOLO</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">model</span> <span class="o">=</span> <span class="n">YOLO</span><span class="p">(</span><span class="s2">&quot;yolov8n.pt&quot;</span><span class="p">)</span> <span class="c1"># pass any model type</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">epochs</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
 </div>
-
-<p><a href="https://hub.ultralytics.com">Ultralytics HUB</a> is a new no-code online tool developed
-by <a href="https://ultralytics.com">Ultralytics</a>, the creators of the popular <a href="https://github.com/ultralytics/yolov5">YOLOv5</a>
-object detection and image segmentation models. With Ultralytics HUB, users can easily train and deploy YOLOv5 models
-without any coding or technical expertise.</p>
-<p>Ultralytics HUB is designed to be user-friendly and intuitive, with a drag-and-drop interface that allows users to
-easily upload their data and select their model configurations. It also offers a range of pre-trained models and
-templates to choose from, making it easy for users to get started with training their own models. Once a model is
-trained, it can be easily deployed and used for real-time object detection and image segmentation tasks. Overall,
-Ultralytics HUB is an essential tool for anyone looking to use YOLOv5 for their object detection and image segmentation
-projects.</p>
-<p><strong><a href="https://hub.ultralytics.com">Get started now</a></strong> and experience the power and simplicity of Ultralytics HUB for
-yourself. Sign up for a free account and
-start building, training, and deploying YOLOv5 and YOLOv8 models today.</p>
-<h2 id="1-upload-a-dataset">1. Upload a Dataset</h2>
-<p>Ultralytics HUB datasets are just like YOLOv5 🚀 datasets, they use the same structure and the same label formats to keep
-everything simple.</p>
-<p>When you upload a dataset to Ultralytics HUB, make sure to <strong>place your dataset YAML inside the dataset root directory</strong>
-as in the example shown below, and then zip for upload to https://hub.ultralytics.com/. Your <strong>dataset YAML, directory
-and zip</strong> should all share the same name. For example, if your dataset is called 'coco6' as in our
-example <a href="https://github.com/ultralytics/hub/blob/master/coco6.zip">ultralytics/hub/coco6.zip</a>, then you should have a
-coco6.yaml inside your coco6/ directory, which should zip to create coco6.zip for upload:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>zip<span class="w"> </span>-r<span class="w"> </span>coco6.zip<span class="w"> </span>coco6
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">ultralytics</span> <span class="kn">import</span> <span class="n">YOLO</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">model</span> <span class="o">=</span> <span class="n">YOLO</span><span class="p">(</span><span class="s2">&quot;yolov8n.yaml&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s2">&quot;coco128.yaml&quot;</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </code></pre></div>
-<p>The example <a href="https://github.com/ultralytics/hub/blob/master/coco6.zip">coco6.zip</a> dataset in this repository can be
-downloaded and unzipped to see exactly how to structure your custom dataset.</p>
-<p align="center"><img width="80%" src="https://user-images.githubusercontent.com/26833433/201424843-20fa081b-ad4b-4d6c-a095-e810775908d8.png" title="COCO6" /></p>
-
-<p>The dataset YAML is the same standard YOLOv5 YAML format. See
-the <a href="https://github.com/ultralytics/yolov5/wiki/Train-Custom-Data">YOLOv5 Train Custom Data tutorial</a> for full details.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">path</span><span class="p">:</span><span class="w">  </span><span class="c1"># dataset root dir (leave empty for HUB)</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">train</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">images/train</span><span class="w">  </span><span class="c1"># train images (relative to &#39;path&#39;) 8 images</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nt">val</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">images/val</span><span class="w">  </span><span class="c1"># val images (relative to &#39;path&#39;) 8 images</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nt">test</span><span class="p">:</span><span class="w">  </span><span class="c1"># test images (optional)</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># Classes</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="nt">names</span><span class="p">:</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nt">0</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">person</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="nt">1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bicycle</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="nt">2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">car</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="nt">3</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">motorcycle</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">TODO</span><span class="p">:</span> <span class="n">Resume</span> <span class="n">feature</span> <span class="ow">is</span> <span class="n">under</span> <span class="n">development</span> <span class="ow">and</span> <span class="n">should</span> <span class="n">be</span> <span class="n">released</span> <span class="n">soon</span><span class="o">.</span>
 </code></pre></div>
-<p>After zipping your dataset, sign in to <a href="https://bit.ly/ultralytics_hub">Ultralytics HUB</a> and click the Datasets tab.
-Click 'Upload Dataset' to upload, scan and visualize your new dataset before training new YOLOv5 models on it!</p>
-<p><img width="100%" alt="HUB Dataset Upload" src="https://user-images.githubusercontent.com/26833433/198611715-540c9856-49d7-4069-a2fd-7c9eb70e772e.png"></p>
-<h2 id="2-train-a-model">2. Train a Model</h2>
-<p>Connect to the Ultralytics HUB notebook and use your model API key to begin
-training! <a href="https://colab.research.google.com/github/ultralytics/hub/blob/master/hub.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
-<h2 id="3-deploy-to-real-world">3. Deploy to Real World</h2>
-<p>Export your model to 13 different formats, including TensorFlow, ONNX, OpenVINO, CoreML, Paddle and many others. Run
-models directly on your mobile device by downloading the <a href="https://ultralytics.com/app_install">Ultralytics App</a>!</p>
-<p><a align="center" href="https://ultralytics.com/app_install" target="_blank">
-<img width="100%" alt="Ultralytics mobile app" src="https://github.com/ultralytics/assets/raw/main/im/ultralytics-app.png"></a></p>
-<h2 id="issues">❓ Issues</h2>
-<p>If you are a new <a href="https://bit.ly/ultralytics_hub">Ultralytics HUB</a> user and have questions or comments, you are in the
-right place! Please raise a <a href="https://github.com/ultralytics/hub/issues/new/choose">New Issue</a> and let us know what we
-can do to make your life better 😃!</p>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Val</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Val after training</label><label for="__tabbed_2_2">Val independently</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>  <span class="kn">from</span> <span class="nn">ultralytics</span> <span class="kn">import</span> <span class="n">YOLO</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  <span class="n">model</span> <span class="o">=</span> <span class="n">YOLO</span><span class="p">(</span><span class="s2">&quot;yolov8n.yaml&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s2">&quot;coco128.yaml&quot;</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>  <span class="n">model</span><span class="o">.</span><span class="n">val</span><span class="p">()</span>  <span class="c1"># It&#39;ll automatically evaluate the data you trained.</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>  <span class="kn">from</span> <span class="nn">ultralytics</span> <span class="kn">import</span> <span class="n">YOLO</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>  <span class="n">model</span> <span class="o">=</span> <span class="n">YOLO</span><span class="p">(</span><span class="s2">&quot;model.pt&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>  <span class="c1"># It&#39;ll use the data yaml file in model.pt if you don&#39;t set data.</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>  <span class="n">model</span><span class="o">.</span><span class="n">val</span><span class="p">()</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>  <span class="c1"># or you can set the data you want to val</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>  <span class="n">model</span><span class="o">.</span><span class="n">val</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s2">&quot;coco128.yaml&quot;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Predict</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">From source</label><label for="__tabbed_3_2">From image/ndarray/tensor</label><label for="__tabbed_3_3">Return outputs</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span> <span class="nn">ultralytics</span> <span class="kn">import</span> <span class="n">YOLO</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">model</span> <span class="o">=</span> <span class="n">YOLO</span><span class="p">(</span><span class="s2">&quot;model.pt&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="s2">&quot;0&quot;</span><span class="p">)</span> <span class="c1"># accepts all formats - img/folder/vid.*(mp4/format). 0 for webcam</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="s2">&quot;folder&quot;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># Display preds. Accepts all yolo predict arguments</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># TODO, still working on it.</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span> <span class="nn">ultralytics</span> <span class="kn">import</span> <span class="n">YOLO</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">model</span> <span class="o">=</span> <span class="n">YOLO</span><span class="p">(</span><span class="s2">&quot;model.pt&quot;</span><span class="p">)</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">outputs</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="n">return_outputs</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># treat predict as a Python generator</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="k">for</span> <span class="n">output</span> <span class="ow">in</span> <span class="n">outputs</span><span class="p">:</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>  <span class="c1"># each output here is a dict.</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>  <span class="c1"># for detection</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>  <span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">[</span><span class="s2">&quot;det&quot;</span><span class="p">])</span>  <span class="c1"># np.ndarray, (N, 6), xyxy, score, cls</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>  <span class="c1"># for segmentation</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>  <span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">[</span><span class="s2">&quot;det&quot;</span><span class="p">])</span>  <span class="c1"># np.ndarray, (N, 6), xyxy, score, cls</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>  <span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">[</span><span class="s2">&quot;segment&quot;</span><span class="p">])</span>  <span class="c1"># List[np.ndarray] * N, bounding coordinates of masks</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>  <span class="c1"># for classify</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>  <span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">[</span><span class="s2">&quot;prob&quot;</span><span class="p">])</span> <span class="c1"># np.ndarray, (num_class, ), cls prob</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Export and Deployment</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Export, Fuse &amp; info</label><label for="__tabbed_4_2">Deployment</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">from</span> <span class="nn">ultralytics</span> <span class="kn">import</span> <span class="n">YOLO</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">model</span> <span class="o">=</span> <span class="n">YOLO</span><span class="p">(</span><span class="s2">&quot;model.pt&quot;</span><span class="p">)</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">model</span><span class="o">.</span><span class="n">fuse</span><span class="p">()</span>  
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="n">model</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># Print model information</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="n">model</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="p">)</span>  <span class="c1"># TODO: </span>
+</code></pre></div>
+</div>
+<div class="tabbed-block"></div>
+</div>
+</div>
+<p>More functionality coming soon</p>
+</div>
+<p>To know more about using <code>YOLO</code> models, refer Model class Reference</p>
+<p><a class="md-button md-button--primary" href="../reference/model/">Model reference</a></p>
+<hr />
+<h3 id="using-trainers">Using Trainers</h3>
+<p><code>YOLO</code> model class is a high-level wrapper on the Trainer classes. Each YOLO task has its own trainer that inherits
+from <code>BaseTrainer</code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Detection Trainer Example<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">from</span> <span class="nn">ultralytics.yolo</span> <span class="kn">import</span> <span class="n">v8</span> <span class="kn">import</span> <span class="nn">DetectionTrainer</span><span class="o">,</span> <span class="nn">DetectionValidator</span><span class="o">,</span> <span class="nn">DetectionPredictor</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1"># trainer</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">trainer</span> <span class="o">=</span> <span class="n">DetectionTrainer</span><span class="p">(</span><span class="n">overrides</span><span class="o">=</span><span class="p">{})</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="n">trainer</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="n">trained_model</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">best</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="c1"># Validator</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="n">val</span> <span class="o">=</span> <span class="n">DetectionValidator</span><span class="p">(</span><span class="n">args</span><span class="o">=...</span><span class="p">)</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="n">val</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">trained_model</span><span class="p">)</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="c1"># predictor</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="n">pred</span> <span class="o">=</span> <span class="n">DetectionPredictor</span><span class="p">(</span><span class="n">overrides</span><span class="o">=</span><span class="p">{})</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="n">pred</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">SOURCE</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">trained_model</span><span class="p">)</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="c1"># resume from last weight</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="n">overrides</span><span class="p">[</span><span class="s2">&quot;resume&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">trainer</span><span class="o">.</span><span class="n">last</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="n">trainer</span> <span class="o">=</span> <span class="n">detect</span><span class="o">.</span><span class="n">DetectionTrainer</span><span class="p">(</span><span class="n">overrides</span><span class="o">=</span><span class="n">overrides</span><span class="p">)</span>
+</code></pre></div>
+</p>
+</div>
+<p>You can easily customize Trainers to support custom tasks or explore R&amp;D ideas.
+Learn more about Customizing <code>Trainers</code>, <code>Validators</code> and <code>Predictors</code> to suit your project needs in the Customization
+Section.</p>
+<p><a class="md-button md-button--primary" href="../engine/">Customization tutorials</a></p>
 
 
 
@@ -857,7 +881,7 @@ can do to make your life better 😃!</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../engine/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Customization Guide" rel="prev">
+          <a href="../cli/" class="md-footer__link md-footer__link--prev" aria-label="Previous: CLI" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -866,20 +890,20 @@ can do to make your life better 😃!</p>
                 <span class="md-footer__direction">
                   Previous
                 </span>
-                Customization Guide
+                CLI
               </div>
             </div>
           </a>
         
         
           
-          <a href="../app/" class="md-footer__link md-footer__link--next" aria-label="Next: iOS and Android App" rel="next">
+          <a href="../config/" class="md-footer__link md-footer__link--next" aria-label="Next: Configuration" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   Next
                 </span>
-                iOS and Android App
+                Configuration
               </div>
             </div>
             <div class="md-footer__button md-icon">
