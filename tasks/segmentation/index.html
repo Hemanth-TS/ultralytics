@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#usage-examples" class="md-skip">
+        <a href="#train" class="md-skip">
           Skip to content
         </a>
       
@@ -330,8 +330,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#usage-examples" class="md-nav__link">
-    Usage examples
+  <a href="#train" class="md-nav__link">
+    Train
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#val" class="md-nav__link">
+    Val
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#predict" class="md-nav__link">
+    Predict
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export" class="md-nav__link">
+    Export
   </a>
   
 </li>
@@ -684,8 +705,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#usage-examples" class="md-nav__link">
-    Usage examples
+  <a href="#train" class="md-nav__link">
+    Train
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#val" class="md-nav__link">
+    Val
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#predict" class="md-nav__link">
+    Predict
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export" class="md-nav__link">
+    Export
   </a>
   
 </li>
@@ -718,7 +760,7 @@
 
 <p>Instance segmentation goes a step further than object detection and involves identifying individual objects in an image
 and segmenting them from the rest of the image.</p>
-<p><img width="1024" src="https://user-images.githubusercontent.com/26833433/212053258-b6948968-4797-4a2b-9247-bfdda77521de.png"></p>
+<p><img width="1024" src="https://user-images.githubusercontent.com/26833433/212094133-6bb8c21c-3d47-41df-a512-81c5931054ae.png"></p>
 <p>The output of an instance segmentation model is a set of masks or
 contours that outline each object in the image, along with class labels and confidence scores for each object. Instance
 segmentation is useful when you need to know not only where objects are in an image, but also what their exact shape is.</p>
@@ -727,11 +769,10 @@ segmentation is useful when you need to know not only where objects are in an im
 <p>YOLOv8 <em>segmentation</em> models use the <code>-seg</code> suffix, i.e. <code>yolov8n-seg.pt</code> and are pretrained on COCO.</p>
 </div>
 <p><a class="md-button md-button--primary" href="https://github.com/ultralytics/ultralytics/tree/main/ultralytics/models/v8/seg">Models</a></p>
-<h2 id="usage-examples">Usage examples</h2>
-<div class="admonition example">
-<p class="admonition-title">1. Train</p>
-<p>Train YOLOv8n-seg on the COCO128-seg dataset for 100 epochs at image size 640. For a full list of available 
+<h2 id="train">Train</h2>
+<p>Train YOLOv8n-seg on the COCO128-seg dataset for 100 epochs at image size 640. For a full list of available
 arguments see the <a href="../../config/">Configuration</a> page.</p>
+<div class="admonition example">
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label><label for="__tabbed_1_2">CLI</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -752,10 +793,10 @@ arguments see the <a href="../../config/">Configuration</a> page.</p>
 </div>
 </div>
 </div>
-<div class="admonition example">
-<p class="admonition-title">2. Val</p>
+<h2 id="val">Val</h2>
 <p>Validate trained YOLOv8n-seg model accuracy on the COCO128-seg dataset. No argument need to passed as the <code>model</code>
 retains it's training <code>data</code> and arguments as model attributes.</p>
+<div class="admonition example">
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Python</label><label for="__tabbed_2_2">CLI</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -777,9 +818,9 @@ retains it's training <code>data</code> and arguments as model attributes.</p>
 </div>
 </div>
 </div>
-<div class="admonition example">
-<p class="admonition-title">3. Predict</p>
+<h2 id="predict">Predict</h2>
 <p>Use a trained YOLOv8n-seg model to run predictions on images.</p>
+<div class="admonition example">
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Python</label><label for="__tabbed_3_2">CLI</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -801,9 +842,9 @@ retains it's training <code>data</code> and arguments as model attributes.</p>
 </div>
 </div>
 </div>
-<div class="admonition example">
-<p class="admonition-title">4. Export</p>
+<h2 id="export">Export</h2>
 <p>Export a YOLOv8n-seg model to a different format like ONNX, CoreML, etc.</p>
+<div class="admonition example">
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Python</label><label for="__tabbed_4_2">CLI</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -829,70 +870,70 @@ retains it's training <code>data</code> and arguments as model attributes.</p>
 <thead>
 <tr>
 <th>Format</th>
-<th><code>format=argument</code></th>
+<th><code>format=</code></th>
 <th>Model</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>PyTorch</td>
+<td><a href="https://pytorch.org/">PyTorch</a></td>
 <td>-</td>
-<td>yolov8n-seg.pt</td>
+<td><code>yolov8n-seg.pt</code></td>
 </tr>
 <tr>
-<td>TorchScript</td>
+<td><a href="https://pytorch.org/docs/stable/jit.html">TorchScript</a></td>
 <td><code>torchscript</code></td>
-<td>yolov8n-seg.torchscript</td>
+<td><code>yolov8n-seg.torchscript</code></td>
 </tr>
 <tr>
-<td>ONNX</td>
+<td><a href="https://onnx.ai/">ONNX</a></td>
 <td><code>onnx</code></td>
-<td>yolov8n-seg.onnx</td>
+<td><code>yolov8n-seg.onnx</code></td>
 </tr>
 <tr>
-<td>OpenVINO</td>
+<td><a href="https://docs.openvino.ai/latest/index.html">OpenVINO</a></td>
 <td><code>openvino</code></td>
-<td>yolov8n-seg_openvino_model/</td>
+<td><code>yolov8n-seg_openvino_model/</code></td>
 </tr>
 <tr>
-<td>TensorRT</td>
+<td><a href="https://developer.nvidia.com/tensorrt">TensorRT</a></td>
 <td><code>engine</code></td>
-<td>yolov8n-seg.engine</td>
+<td><code>yolov8n-seg.engine</code></td>
 </tr>
 <tr>
-<td>CoreML</td>
+<td><a href="https://github.com/apple/coremltools">CoreML</a></td>
 <td><code>coreml</code></td>
-<td>yolov8n-seg.mlmodel</td>
+<td><code>yolov8n-seg.mlmodel</code></td>
 </tr>
 <tr>
-<td>TensorFlow SavedModel</td>
+<td><a href="https://www.tensorflow.org/guide/saved_model">TensorFlow SavedModel</a></td>
 <td><code>saved_model</code></td>
-<td>yolov8n-seg_saved_model/</td>
+<td><code>yolov8n-seg_saved_model/</code></td>
 </tr>
 <tr>
-<td>TensorFlow GraphDef</td>
+<td><a href="https://www.tensorflow.org/api_docs/python/tf/Graph">TensorFlow GraphDef</a></td>
 <td><code>pb</code></td>
-<td>yolov8n-seg.pb</td>
+<td><code>yolov8n-seg.pb</code></td>
 </tr>
 <tr>
-<td>TensorFlow Lite</td>
+<td><a href="https://www.tensorflow.org/lite">TensorFlow Lite</a></td>
 <td><code>tflite</code></td>
-<td>yolov8n-seg.tflite</td>
+<td><code>yolov8n-seg.tflite</code></td>
 </tr>
 <tr>
-<td>TensorFlow Edge TPU</td>
+<td><a href="https://coral.ai/docs/edgetpu/models-intro/">TensorFlow Edge TPU</a></td>
 <td><code>edgetpu</code></td>
-<td>yolov8n-seg_edgetpu.tflite</td>
+<td><code>yolov8n-seg_edgetpu.tflite</code></td>
 </tr>
 <tr>
-<td>TensorFlow.js</td>
+<td><a href="https://www.tensorflow.org/js">TensorFlow.js</a></td>
 <td><code>tfjs</code></td>
-<td>yolov8n-seg_web_model/</td>
+<td><code>yolov8n-seg_web_model/</code></td>
 </tr>
 <tr>
-<td>PaddlePaddle</td>
+<td><a href="https://github.com/PaddlePaddle">PaddlePaddle</a></td>
 <td><code>paddle</code></td>
-<td>yolov8n-seg_paddle_model/</td>
+<td><code>yolov8n-seg_paddle_model/</code></td>
 </tr>
 </tbody>
 </table>

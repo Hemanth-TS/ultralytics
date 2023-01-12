@@ -783,7 +783,7 @@ custom model and dataloder by just overriding these functions:</p>
 </ul>
 <h2 id="detectiontrainer">DetectionTrainer</h2>
 <p>Here's how you can use the YOLOv8 <code>DetectionTrainer</code> and customize it.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">ultralytics.yolo.v8</span> <span class="kn">import</span> <span class="n">DetectionTrainer</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">ultralytics.yolo.v8.detect</span> <span class="kn">import</span> <span class="n">DetectionTrainer</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">trainer</span> <span class="o">=</span> <span class="n">DetectionTrainer</span><span class="p">(</span><span class="n">overrides</span><span class="o">=</span><span class="p">{</span><span class="o">...</span><span class="p">})</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">trainer</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
@@ -792,7 +792,7 @@ custom model and dataloder by just overriding these functions:</p>
 <h3 id="customizing-the-detectiontrainer">Customizing the DetectionTrainer</h3>
 <p>Let's customize the trainer <strong>to train a custom detection model</strong> that is not supported directly. You can do this by
 simply overloading the existing the <code>get_model</code> functionality:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">ultralytics.yolo.v8</span> <span class="kn">import</span> <span class="n">DetectionTrainer</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">ultralytics.yolo.v8.detect</span> <span class="kn">import</span> <span class="n">DetectionTrainer</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">class</span> <span class="nc">CustomTrainer</span><span class="p">(</span><span class="n">DetectionTrainer</span><span class="p">):</span>
@@ -809,7 +809,7 @@ simply overloading the existing the <code>get_model</code> functionality:</p>
 <li>Add <code>callback</code> that uploads model to your Google Drive after every 10 <code>epochs</code>
   Here's how you can do it:</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span> <span class="nn">ultralytics.yolo.v8</span> <span class="kn">import</span> <span class="n">DetectionTrainer</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span> <span class="nn">ultralytics.yolo.v8.detect</span> <span class="kn">import</span> <span class="n">DetectionTrainer</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">class</span> <span class="nc">CustomTrainer</span><span class="p">(</span><span class="n">DetectionTrainer</span><span class="p">):</span>
@@ -836,8 +836,8 @@ simply overloading the existing the <code>get_model</code> functionality:</p>
 </code></pre></div>
 <p>To know more about Callback triggering events and entry point, checkout our Callbacks guide # TODO</p>
 <h2 id="other-engine-components">Other engine components</h2>
-<p>There are other components that can be customized similarly like <code>Validators</code> and <code>Predictiors</code>
-To know more about their implementation details, go to Reference</p>
+<p>There are other componenets that can be customized similarly like <code>Validators</code> and <code>Predictors</code>
+See Reference section for more information on these.</p>
 
 
 
