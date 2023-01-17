@@ -830,7 +830,7 @@ arguments see the <a href="../../config/">Configuration</a> page.</p>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>yolo<span class="w"> </span><span class="nv">task</span><span class="o">=</span>segment<span class="w"> </span><span class="nv">mode</span><span class="o">=</span>train<span class="w"> </span><span class="nv">data</span><span class="o">=</span>coco128-seg.yaml<span class="w"> </span><span class="nv">model</span><span class="o">=</span>yolov8n-seg.pt<span class="w"> </span><span class="nv">epochs</span><span class="o">=</span><span class="m">100</span><span class="w"> </span><span class="nv">imgsz</span><span class="o">=</span><span class="m">640</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>yolo<span class="w"> </span>segment<span class="w"> </span>train<span class="w"> </span><span class="nv">data</span><span class="o">=</span>coco128-seg.yaml<span class="w"> </span><span class="nv">model</span><span class="o">=</span>yolov8n-seg.pt<span class="w"> </span><span class="nv">epochs</span><span class="o">=</span><span class="m">100</span><span class="w"> </span><span class="nv">imgsz</span><span class="o">=</span><span class="m">640</span>
 </code></pre></div>
 </div>
 </div>
@@ -854,8 +854,8 @@ retains it's training <code>data</code> and arguments as model attributes.</p>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>yolo<span class="w"> </span><span class="nv">task</span><span class="o">=</span>segment<span class="w"> </span><span class="nv">mode</span><span class="o">=</span>val<span class="w"> </span><span class="nv">model</span><span class="o">=</span>yolov8n-seg.pt<span class="w">  </span><span class="c1"># val official model</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>yolo<span class="w"> </span><span class="nv">task</span><span class="o">=</span>segment<span class="w"> </span><span class="nv">mode</span><span class="o">=</span>val<span class="w"> </span><span class="nv">model</span><span class="o">=</span>path/to/best.pt<span class="w">  </span><span class="c1"># val custom model</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>yolo<span class="w"> </span>segment<span class="w"> </span>val<span class="w"> </span><span class="nv">model</span><span class="o">=</span>yolov8n-seg.pt<span class="w">  </span><span class="c1"># val official model</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>yolo<span class="w"> </span>segment<span class="w"> </span>val<span class="w"> </span><span class="nv">model</span><span class="o">=</span>path/to/best.pt<span class="w">  </span><span class="c1"># val custom model</span>
 </code></pre></div>
 </div>
 </div>
@@ -878,8 +878,8 @@ retains it's training <code>data</code> and arguments as model attributes.</p>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>yolo<span class="w"> </span><span class="nv">task</span><span class="o">=</span>segment<span class="w"> </span><span class="nv">mode</span><span class="o">=</span>predict<span class="w"> </span><span class="nv">model</span><span class="o">=</span>yolov8n-seg.pt<span class="w"> </span><span class="nv">source</span><span class="o">=</span><span class="s2">&quot;https://ultralytics.com/images/bus.jpg&quot;</span><span class="w">  </span><span class="c1"># predict with official model</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>yolo<span class="w"> </span><span class="nv">task</span><span class="o">=</span>segment<span class="w"> </span><span class="nv">mode</span><span class="o">=</span>predict<span class="w"> </span><span class="nv">model</span><span class="o">=</span>path/to/best.pt<span class="w"> </span><span class="nv">source</span><span class="o">=</span><span class="s2">&quot;https://ultralytics.com/images/bus.jpg&quot;</span><span class="w">  </span><span class="c1"># predict with custom model</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>yolo<span class="w"> </span>segment<span class="w"> </span>predict<span class="w"> </span><span class="nv">model</span><span class="o">=</span>yolov8n-seg.pt<span class="w"> </span><span class="nv">source</span><span class="o">=</span><span class="s2">&quot;https://ultralytics.com/images/bus.jpg&quot;</span><span class="w">  </span><span class="c1"># predict with official model</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>yolo<span class="w"> </span>segment<span class="w"> </span>predict<span class="w"> </span><span class="nv">model</span><span class="o">=</span>path/to/best.pt<span class="w"> </span><span class="nv">source</span><span class="o">=</span><span class="s2">&quot;https://ultralytics.com/images/bus.jpg&quot;</span><span class="w">  </span><span class="c1"># predict with custom model</span>
 </code></pre></div>
 </div>
 </div>
@@ -902,8 +902,8 @@ retains it's training <code>data</code> and arguments as model attributes.</p>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>yolo<span class="w"> </span><span class="nv">mode</span><span class="o">=</span><span class="nb">export</span><span class="w"> </span><span class="nv">model</span><span class="o">=</span>yolov8n-seg.pt<span class="w"> </span><span class="nv">format</span><span class="o">=</span>onnx<span class="w">  </span><span class="c1"># export official model</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>yolo<span class="w"> </span><span class="nv">mode</span><span class="o">=</span><span class="nb">export</span><span class="w"> </span><span class="nv">model</span><span class="o">=</span>path/to/best.pt<span class="w"> </span><span class="nv">format</span><span class="o">=</span>onnx<span class="w">  </span><span class="c1"># export custom trained model</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>yolo<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">model</span><span class="o">=</span>yolov8n-seg.pt<span class="w"> </span><span class="nv">format</span><span class="o">=</span>onnx<span class="w">  </span><span class="c1"># export official model</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>yolo<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">model</span><span class="o">=</span>path/to/best.pt<span class="w"> </span><span class="nv">format</span><span class="o">=</span>onnx<span class="w">  </span><span class="c1"># export custom trained model</span>
 </code></pre></div>
 </div>
 </div>

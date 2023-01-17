@@ -890,12 +890,12 @@ include train, val, and predict.</p>
 <tr>
 <td>task</td>
 <td><code>detect</code></td>
-<td>Set the task via CLI. See Tasks for all supported tasks like - <code>detect</code>, <code>segment</code>, <code>classify</code>.<br> - <code>init</code> is a special case that creates a copy of default.yaml configs to the current working dir</td>
+<td>Set the task via CLI. See Tasks for all supported tasks like - <code>detect</code>, <code>segment</code>, <code>classify</code></td>
 </tr>
 <tr>
 <td>mode</td>
 <td><code>train</code></td>
-<td>Set the mode via CLI. It can be <code>train</code>, <code>val</code>, <code>predict</code></td>
+<td>Set the mode via CLI. It can be <code>train</code>, <code>val</code>, <code>predict</code>, <code>export</code></td>
 </tr>
 <tr>
 <td>resume</td>
@@ -1359,7 +1359,7 @@ it easier to debug and optimize the training process.</p>
 <tr>
 <td>exist_ok:</td>
 <td><code>False</code></td>
-<td>???</td>
+<td>Will replace current directory contents if set to True and output directory exists.</td>
 </tr>
 <tr>
 <td>plots</td>
@@ -1367,9 +1367,9 @@ it easier to debug and optimize the training process.</p>
 <td><strong>Validation</strong>: Save plots while validation</td>
 </tr>
 <tr>
-<td>nosave</td>
+<td>save</td>
 <td><code>False</code></td>
-<td>Don't save any plots, models or files</td>
+<td>Save any plots, models or files</td>
 </tr>
 </tbody>
 </table>
