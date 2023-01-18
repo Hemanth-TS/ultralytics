@@ -4,7 +4,7 @@ import argparse
 import shutil
 from pathlib import Path
 
-from ultralytics import __version__, yolo
+from ultralytics import __version__, yolo, YOLO
 from ultralytics.yolo.utils import DEFAULT_CONFIG, LOGGER, PREFIX, checks, print_settings, yaml_load
 
 DIR = Path(__file__).parent
