@@ -6,7 +6,7 @@ from pathlib import Path
 
 from hydra import compose, initialize
 
-from ultralytics import hub, yolo
+from ultralytics import hub, yolo, YOLO
 from ultralytics.yolo.utils import DEFAULT_CONFIG, HELP_MSG, LOGGER, PREFIX, print_settings, yaml_load
 
 DIR = Path(__file__).parent
@@ -66,12 +66,14 @@ def entrypoint():
     args = parser.parse_args().args
 
     tasks = 'detect', 'segment', 'classify'
-    modes = 'train', 'val', 'predict', 'export'
+    modes = 'train', 'val', 'export'
     special_modes = {
         'checks': hub.checks,
         'help': lambda: LOGGER.info(HELP_MSG),
         'settings': print_settings,
-        'copy-config': copy_default_config}
+        'copy-config': copy_default_config,
+        'predict': predict_cli
+         }
 
     overrides = []  # basic overrides, i.e. imgsz=320
     defaults = yaml_load(DEFAULT_CONFIG)
@@ -94,6 +96,13 @@ def entrypoint():
         cfg = compose(config_name=DEFAULT_CONFIG.name, overrides=overrides)
         cli(cfg)
 
+def predict_cli(cfg):
+    import pdb;pdb.set_trace()
+    cfg.verbose=True
+    model = YOLO(cfg.model)
+    gen = model.predict(stream=True, **cfg)
+    for _ in gen:
+        pass
 
 # Special modes --------------------------------------------------------------------------------------------------------
 def copy_default_config():
