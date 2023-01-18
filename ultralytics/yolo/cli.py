@@ -97,7 +97,6 @@ def entrypoint():
         cli(cfg)
 
 def predict_cli(cfg):
-    import pdb;pdb.set_trace()
     cfg.verbose=True
     model = YOLO(cfg.model)
     gen = model.predict(stream=True, **cfg)
