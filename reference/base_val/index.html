@@ -851,7 +851,7 @@ can override any function of these Trainers to suit your needs.</p>
         <tr>
           <td><code>args</code></td>
           <td>
-                <code><span title="omegaconf.OmegaConf">OmegaConf</span></code>
+                <code>SimpleNamespace</code>
           </td>
           <td><p>Configuration for the validator.</p></td>
         </tr>
@@ -1131,7 +1131,7 @@ can override any function of these Trainers to suit your needs.</p>
 <a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="sd">        dataloader (DataLoader): Dataloader to use for validation.</span>
 <a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="sd">        pbar (tqdm): Progress bar to update during validation.</span>
 <a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="sd">        logger (logging.Logger): Logger to use for validation.</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="sd">        args (OmegaConf): Configuration for the validator.</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="sd">        args (SimpleNamespace): Configuration for the validator.</span>
 <a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="sd">        model (nn.Module): Model to validate.</span>
 <a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="sd">        data (dict): Data dictionary.</span>
 <a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="sd">        device (torch.device): Device to use for validation.</span>
@@ -1151,12 +1151,12 @@ can override any function of these Trainers to suit your needs.</p>
 <a id="__codelineno-0-47" name="__codelineno-0-47"></a><span class="sd">            save_dir (Path): Directory to save results.</span>
 <a id="__codelineno-0-48" name="__codelineno-0-48"></a><span class="sd">            pbar (tqdm.tqdm): Progress bar for displaying progress.</span>
 <a id="__codelineno-0-49" name="__codelineno-0-49"></a><span class="sd">            logger (logging.Logger): Logger to log messages.</span>
-<a id="__codelineno-0-50" name="__codelineno-0-50"></a><span class="sd">            args (OmegaConf): Configuration for the validator.</span>
+<a id="__codelineno-0-50" name="__codelineno-0-50"></a><span class="sd">            args (SimpleNamespace): Configuration for the validator.</span>
 <a id="__codelineno-0-51" name="__codelineno-0-51"></a><span class="sd">        &quot;&quot;&quot;</span>
 <a id="__codelineno-0-52" name="__codelineno-0-52"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">dataloader</span> <span class="o">=</span> <span class="n">dataloader</span>
 <a id="__codelineno-0-53" name="__codelineno-0-53"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">pbar</span> <span class="o">=</span> <span class="n">pbar</span>
 <a id="__codelineno-0-54" name="__codelineno-0-54"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logger</span> <span class="ow">or</span> <span class="n">LOGGER</span>
-<a id="__codelineno-0-55" name="__codelineno-0-55"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span> <span class="ow">or</span> <span class="n">OmegaConf</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">DEFAULT_CONFIG</span><span class="p">)</span>
+<a id="__codelineno-0-55" name="__codelineno-0-55"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span> <span class="ow">or</span> <span class="n">get_config</span><span class="p">(</span><span class="n">DEFAULT_CFG_PATH</span><span class="p">)</span>
 <a id="__codelineno-0-56" name="__codelineno-0-56"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="kc">None</span>
 <a id="__codelineno-0-57" name="__codelineno-0-57"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="kc">None</span>
 <a id="__codelineno-0-58" name="__codelineno-0-58"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="kc">None</span>
@@ -1635,7 +1635,7 @@ if trainer is passed (trainer gets priority).</p>
         <tr>
           <td><code>args</code></td>
           <td>
-                <code><span title="omegaconf.OmegaConf">OmegaConf</span></code>
+                <code>SimpleNamespace</code>
           </td>
           <td><p>Configuration for the validator.</p></td>
           <td>
@@ -1688,12 +1688,12 @@ if trainer is passed (trainer gets priority).</p>
 <a id="__codelineno-0-47" name="__codelineno-0-47"></a><span class="sd">        save_dir (Path): Directory to save results.</span>
 <a id="__codelineno-0-48" name="__codelineno-0-48"></a><span class="sd">        pbar (tqdm.tqdm): Progress bar for displaying progress.</span>
 <a id="__codelineno-0-49" name="__codelineno-0-49"></a><span class="sd">        logger (logging.Logger): Logger to log messages.</span>
-<a id="__codelineno-0-50" name="__codelineno-0-50"></a><span class="sd">        args (OmegaConf): Configuration for the validator.</span>
+<a id="__codelineno-0-50" name="__codelineno-0-50"></a><span class="sd">        args (SimpleNamespace): Configuration for the validator.</span>
 <a id="__codelineno-0-51" name="__codelineno-0-51"></a><span class="sd">    &quot;&quot;&quot;</span>
 <a id="__codelineno-0-52" name="__codelineno-0-52"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">dataloader</span> <span class="o">=</span> <span class="n">dataloader</span>
 <a id="__codelineno-0-53" name="__codelineno-0-53"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">pbar</span> <span class="o">=</span> <span class="n">pbar</span>
 <a id="__codelineno-0-54" name="__codelineno-0-54"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logger</span> <span class="ow">or</span> <span class="n">LOGGER</span>
-<a id="__codelineno-0-55" name="__codelineno-0-55"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span> <span class="ow">or</span> <span class="n">OmegaConf</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">DEFAULT_CONFIG</span><span class="p">)</span>
+<a id="__codelineno-0-55" name="__codelineno-0-55"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span> <span class="ow">or</span> <span class="n">get_config</span><span class="p">(</span><span class="n">DEFAULT_CFG_PATH</span><span class="p">)</span>
 <a id="__codelineno-0-56" name="__codelineno-0-56"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="kc">None</span>
 <a id="__codelineno-0-57" name="__codelineno-0-57"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="kc">None</span>
 <a id="__codelineno-0-58" name="__codelineno-0-58"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="kc">None</span>
