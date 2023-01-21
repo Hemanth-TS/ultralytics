@@ -832,7 +832,7 @@
                   
 
   
-    <a href="https://github.com/ultralytics/ultralytics/tree/main/docs/config.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/ultralytics/ultralytics/tree/main/docs/cfg.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -889,28 +889,28 @@ include train, val, and predict.</p>
 <tbody>
 <tr>
 <td>task</td>
-<td><code>detect</code></td>
-<td>Set the task via CLI. See Tasks for all supported tasks like - <code>detect</code>, <code>segment</code>, <code>classify</code></td>
+<td>'detect'</td>
+<td>inference task, i.e. detect, segment, or classify</td>
 </tr>
 <tr>
 <td>mode</td>
-<td><code>train</code></td>
-<td>Set the mode via CLI. It can be <code>train</code>, <code>val</code>, <code>predict</code>, <code>export</code></td>
+<td>'train'</td>
+<td>YOLO mode, i.e. train, val, predict, or export</td>
 </tr>
 <tr>
 <td>resume</td>
-<td><code>False</code></td>
-<td>Resume last given task when set to <code>True</code>. <br> Resume from a given checkpoint is <code>model.pt</code> is passed</td>
+<td>False</td>
+<td>resume training from last checkpoint or custom checkpoint if passed as resume=path/to/best.pt</td>
 </tr>
 <tr>
 <td>model</td>
 <td>null</td>
-<td>Set the model. Format can differ for task type. Supports <code>model_name</code>, <code>model.yaml</code> &amp; <code>model.pt</code></td>
+<td>path to model file, i.e. yolov8n.pt, yolov8n.yaml</td>
 </tr>
 <tr>
 <td>data</td>
 <td>null</td>
-<td>Set the data. Format can differ for task type. Supports <code>data.yaml</code>, <code>data_folder</code>, <code>dataset_name</code></td>
+<td>path to data file, i.e. i.e. coco128.yaml</td>
 </tr>
 </tbody>
 </table>
@@ -931,134 +931,184 @@ task.</p>
 </thead>
 <tbody>
 <tr>
-<td>device</td>
-<td>''</td>
-<td>cuda device, i.e. 0 or 0,1,2,3 or cpu. <code>''</code> selects available cuda 0 device</td>
+<td>model</td>
+<td>null</td>
+<td>path to model file, i.e. yolov8n.pt, yolov8n.yaml</td>
+</tr>
+<tr>
+<td>data</td>
+<td>null</td>
+<td>path to data file, i.e. i.e. coco128.yaml</td>
 </tr>
 <tr>
 <td>epochs</td>
 <td>100</td>
-<td>Number of epochs to train</td>
+<td>number of epochs to train for</td>
 </tr>
 <tr>
-<td>workers</td>
-<td>8</td>
-<td>Number of cpu workers used per process. Scales automatically with DDP</td>
+<td>patience</td>
+<td>50</td>
+<td>epochs to wait for no observable improvement for early stopping of training</td>
 </tr>
 <tr>
 <td>batch</td>
 <td>16</td>
-<td>Batch size of the dataloader</td>
+<td>number of images per batch (-1 for AutoBatch)</td>
 </tr>
 <tr>
 <td>imgsz</td>
 <td>640</td>
-<td>Image size of data in dataloader</td>
+<td>size of input images as integer or w,h</td>
+</tr>
+<tr>
+<td>save</td>
+<td>True</td>
+<td>save train checkpoints and predict results</td>
+</tr>
+<tr>
+<td>cache</td>
+<td>False</td>
+<td>True/ram, disk or False. Use cache for data loading</td>
+</tr>
+<tr>
+<td>device</td>
+<td>null</td>
+<td>device to run on, i.e. cuda device=0 or device=0,1,2,3 or device=cpu</td>
+</tr>
+<tr>
+<td>workers</td>
+<td>8</td>
+<td>number of worker threads for data loading (per RANK if DDP)</td>
+</tr>
+<tr>
+<td>project</td>
+<td>null</td>
+<td>project name</td>
+</tr>
+<tr>
+<td>name</td>
+<td>null</td>
+<td>experiment name</td>
+</tr>
+<tr>
+<td>exist_ok</td>
+<td>False</td>
+<td>whether to overwrite existing experiment</td>
+</tr>
+<tr>
+<td>pretrained</td>
+<td>False</td>
+<td>whether to use a pretrained model</td>
 </tr>
 <tr>
 <td>optimizer</td>
-<td>SGD</td>
-<td>Optimizer used. Supported optimizer are: <code>Adam</code>, <code>SGD</code>, <code>RMSProp</code></td>
+<td>'SGD'</td>
+<td>optimizer to use, choices=['SGD', 'Adam', 'AdamW', 'RMSProp']</td>
+</tr>
+<tr>
+<td>verbose</td>
+<td>False</td>
+<td>whether to print verbose output</td>
+</tr>
+<tr>
+<td>seed</td>
+<td>0</td>
+<td>random seed for reproducibility</td>
+</tr>
+<tr>
+<td>deterministic</td>
+<td>True</td>
+<td>whether to enable deterministic mode</td>
 </tr>
 <tr>
 <td>single_cls</td>
 <td>False</td>
-<td>Train on multi-class data as single-class</td>
+<td>train multi-class data as single-class</td>
 </tr>
 <tr>
 <td>image_weights</td>
 <td>False</td>
-<td>Use weighted image selection for training</td>
+<td>use weighted image selection for training</td>
 </tr>
 <tr>
 <td>rect</td>
 <td>False</td>
-<td>Enable rectangular training</td>
+<td>support rectangular training</td>
 </tr>
 <tr>
 <td>cos_lr</td>
 <td>False</td>
-<td>Use cosine LR scheduler</td>
+<td>use cosine learning rate scheduler</td>
+</tr>
+<tr>
+<td>close_mosaic</td>
+<td>10</td>
+<td>disable mosaic augmentation for final 10 epochs</td>
+</tr>
+<tr>
+<td>resume</td>
+<td>False</td>
+<td>resume training from last checkpoint</td>
 </tr>
 <tr>
 <td>lr0</td>
 <td>0.01</td>
-<td>Initial learning rate</td>
+<td>initial learning rate (i.e. SGD=1E-2, Adam=1E-3)</td>
 </tr>
 <tr>
 <td>lrf</td>
 <td>0.01</td>
-<td>Final OneCycleLR learning rate</td>
+<td>final learning rate (lr0 * lrf)</td>
 </tr>
 <tr>
 <td>momentum</td>
 <td>0.937</td>
-<td>Use as <code>momentum</code> for SGD and <code>beta1</code> for Adam</td>
+<td>SGD momentum/Adam beta1</td>
 </tr>
 <tr>
 <td>weight_decay</td>
 <td>0.0005</td>
-<td>Optimizer weight decay</td>
+<td>optimizer weight decay 5e-4</td>
 </tr>
 <tr>
 <td>warmup_epochs</td>
 <td>3.0</td>
-<td>Warmup epochs. Fractions are ok.</td>
+<td>warmup epochs (fractions ok)</td>
 </tr>
 <tr>
 <td>warmup_momentum</td>
 <td>0.8</td>
-<td>Warmup initial momentum</td>
+<td>warmup initial momentum</td>
 </tr>
 <tr>
 <td>warmup_bias_lr</td>
 <td>0.1</td>
-<td>Warmup initial bias lr</td>
+<td>warmup initial bias lr</td>
 </tr>
 <tr>
 <td>box</td>
-<td>0.05</td>
-<td>Box loss gain</td>
+<td>7.5</td>
+<td>box loss gain</td>
 </tr>
 <tr>
 <td>cls</td>
 <td>0.5</td>
-<td>cls loss gain</td>
+<td>cls loss gain (scale with pixels)</td>
 </tr>
 <tr>
-<td>cls_pw</td>
-<td>1.0</td>
-<td>cls BCELoss positive_weight</td>
-</tr>
-<tr>
-<td>obj</td>
-<td>1.0</td>
-<td>bj loss gain (scale with pixels)</td>
-</tr>
-<tr>
-<td>obj_pw</td>
-<td>1.0</td>
-<td>obj BCELoss positive_weight</td>
-</tr>
-<tr>
-<td>iou_t</td>
-<td>0.20</td>
-<td>IOU training threshold</td>
-</tr>
-<tr>
-<td>anchor_t</td>
-<td>4.0</td>
-<td>anchor-multiple threshold</td>
+<td>dfl</td>
+<td>1.5</td>
+<td>dfl loss gain</td>
 </tr>
 <tr>
 <td>fl_gamma</td>
 <td>0.0</td>
-<td>focal loss gamma</td>
+<td>focal loss gamma (efficientDet default gamma=1.5)</td>
 </tr>
 <tr>
 <td>label_smoothing</td>
 <td>0.0</td>
-<td></td>
+<td>label smoothing (fraction)</td>
 </tr>
 <tr>
 <td>nbs</td>
@@ -1067,18 +1117,18 @@ task.</p>
 </tr>
 <tr>
 <td>overlap_mask</td>
-<td><code>True</code></td>
-<td><strong>Segmentation</strong>: Use mask overlapping during training</td>
+<td>True</td>
+<td>masks should overlap during training (segment train only)</td>
 </tr>
 <tr>
 <td>mask_ratio</td>
 <td>4</td>
-<td><strong>Segmentation</strong>: Set mask downsampling</td>
+<td>mask downsample ratio (segment train only)</td>
 </tr>
 <tr>
 <td>dropout</td>
-<td><code>False</code></td>
-<td><strong>Classification</strong>: Use dropout while training</td>
+<td>0.0</td>
+<td>use dropout regularization (classify train only)</td>
 </tr>
 </tbody>
 </table>
@@ -1101,68 +1151,73 @@ given task.</p>
 <tbody>
 <tr>
 <td>source</td>
-<td><code>ultralytics/assets</code></td>
-<td>Input source. Accepts image, folder, video, url</td>
+<td>'ultralytics/assets'</td>
+<td>source directory for images or videos</td>
 </tr>
 <tr>
 <td>show</td>
-<td><code>False</code></td>
-<td>View the prediction images</td>
+<td>False</td>
+<td>show results if possible</td>
 </tr>
 <tr>
 <td>save_txt</td>
-<td><code>False</code></td>
-<td>Save the results in a txt file</td>
+<td>False</td>
+<td>save results as .txt file</td>
 </tr>
 <tr>
 <td>save_conf</td>
-<td><code>False</code></td>
-<td>Save the condidence scores</td>
+<td>False</td>
+<td>save results with confidence scores</td>
 </tr>
 <tr>
 <td>save_crop</td>
-<td><code>Fasle</code></td>
-<td></td>
+<td>Fasle</td>
+<td>save cropped images with results</td>
 </tr>
 <tr>
 <td>hide_labels</td>
-<td><code>False</code></td>
-<td>Hide the labels</td>
+<td>False</td>
+<td>hide labels</td>
 </tr>
 <tr>
 <td>hide_conf</td>
-<td><code>False</code></td>
-<td>Hide the confidence scores</td>
+<td>False</td>
+<td>hide confidence scores</td>
 </tr>
 <tr>
 <td>vid_stride</td>
-<td><code>False</code></td>
-<td>Input video frame-rate stride</td>
+<td>False</td>
+<td>video frame-rate stride</td>
 </tr>
 <tr>
 <td>line_thickness</td>
-<td><code>3</code></td>
-<td>Bounding-box thickness (pixels)</td>
+<td>3</td>
+<td>bounding box thickness (pixels)</td>
 </tr>
 <tr>
 <td>visualize</td>
-<td><code>False</code></td>
-<td>Visualize model features</td>
+<td>False</td>
+<td>visualize model features</td>
 </tr>
 <tr>
 <td>augment</td>
-<td><code>False</code></td>
-<td>Augmented inference</td>
+<td>False</td>
+<td>apply image augmentation to prediction sources</td>
 </tr>
 <tr>
 <td>agnostic_nms</td>
-<td><code>False</code></td>
-<td>Class-agnostic NMS</td>
+<td>False</td>
+<td>class-agnostic NMS</td>
 </tr>
 <tr>
 <td>retina_masks</td>
-<td><code>False</code></td>
-<td><strong>Segmentation:</strong> High resolution masks</td>
+<td>False</td>
+<td>use high-resolution segmentation masks</td>
+</tr>
+<tr>
+<td>classes</td>
+<td>null</td>
+<td>filter results by class, i.e. class=0, or class=[0,2,3]</td>
 </tr>
 </tbody>
 </table>
@@ -1184,49 +1239,49 @@ validation dataset and to detect and prevent overfitting.</p>
 </thead>
 <tbody>
 <tr>
-<td>noval</td>
-<td><code>False</code></td>
-<td>???</td>
+<td>val</td>
+<td>True</td>
+<td>validate/test during training</td>
 </tr>
 <tr>
 <td>save_json</td>
-<td><code>False</code></td>
-<td></td>
+<td>False</td>
+<td>save results to JSON file</td>
 </tr>
 <tr>
 <td>save_hybrid</td>
-<td><code>False</code></td>
-<td></td>
+<td>False</td>
+<td>save hybrid version of labels (labels + additional predictions)</td>
 </tr>
 <tr>
 <td>conf</td>
-<td><code>0.001</code></td>
-<td>Confidence threshold</td>
+<td>0.001</td>
+<td>object confidence threshold for detection (default 0.25 predict, 0.001 val)</td>
 </tr>
 <tr>
 <td>iou</td>
-<td><code>0.6</code></td>
-<td>IoU threshold</td>
+<td>0.6</td>
+<td>intersection over union (IoU) threshold for NMS</td>
 </tr>
 <tr>
 <td>max_det</td>
-<td><code>300</code></td>
-<td>Maximum number of detections</td>
+<td>300</td>
+<td>maximum number of detections per image</td>
 </tr>
 <tr>
 <td>half</td>
-<td><code>True</code></td>
-<td>Use .half() mode.</td>
+<td>True</td>
+<td>use half precision (FP16)</td>
 </tr>
 <tr>
 <td>dnn</td>
-<td><code>False</code></td>
-<td>Use OpenCV DNN for ONNX inference</td>
+<td>False</td>
+<td>use OpenCV DNN for ONNX inference</td>
 </tr>
 <tr>
 <td>plots</td>
-<td><code>False</code></td>
-<td></td>
+<td>False</td>
+<td>show plots during training</td>
 </tr>
 </tbody>
 </table>
@@ -1251,71 +1306,76 @@ ensure that the augmented dataset is diverse and representative enough to train 
 <table>
 <thead>
 <tr>
-<th>hsv_h</th>
-<th>0.015</th>
-<th>Image HSV-Hue augmentation (fraction)</th>
+<th>Key</th>
+<th>Value</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>hsv_h</td>
+<td>0.015</td>
+<td>image HSV-Hue augmentation (fraction)</td>
+</tr>
+<tr>
 <td>hsv_s</td>
 <td>0.7</td>
-<td>Image HSV-Saturation augmentation (fraction)</td>
+<td>image HSV-Saturation augmentation (fraction)</td>
 </tr>
 <tr>
 <td>hsv_v</td>
 <td>0.4</td>
-<td>Image HSV-Value augmentation (fraction)</td>
+<td>image HSV-Value augmentation (fraction)</td>
 </tr>
 <tr>
 <td>degrees</td>
 <td>0.0</td>
-<td>Image rotation (+/- deg)</td>
+<td>image rotation (+/- deg)</td>
 </tr>
 <tr>
 <td>translate</td>
 <td>0.1</td>
-<td>Image translation (+/- fraction)</td>
+<td>image translation (+/- fraction)</td>
 </tr>
 <tr>
 <td>scale</td>
 <td>0.5</td>
-<td>Image scale (+/- gain)</td>
+<td>image scale (+/- gain)</td>
 </tr>
 <tr>
 <td>shear</td>
 <td>0.0</td>
-<td>Image shear (+/- deg)</td>
+<td>image shear (+/- deg)</td>
 </tr>
 <tr>
 <td>perspective</td>
 <td>0.0</td>
-<td>Image perspective (+/- fraction), range 0-0.001</td>
+<td>image perspective (+/- fraction), range 0-0.001</td>
 </tr>
 <tr>
 <td>flipud</td>
 <td>0.0</td>
-<td>Image flip up-down (probability)</td>
+<td>image flip up-down (probability)</td>
 </tr>
 <tr>
 <td>fliplr</td>
 <td>0.5</td>
-<td>Image flip left-right (probability)</td>
+<td>image flip left-right (probability)</td>
 </tr>
 <tr>
 <td>mosaic</td>
 <td>1.0</td>
-<td>Image mosaic (probability)</td>
+<td>image mosaic (probability)</td>
 </tr>
 <tr>
 <td>mixup</td>
 <td>0.0</td>
-<td>Image mixup (probability)</td>
+<td>image mixup (probability)</td>
 </tr>
 <tr>
 <td>copy_paste</td>
 <td>0.0</td>
-<td>Segment copy-paste (probability)</td>
+<td>segment copy-paste (probability)</td>
 </tr>
 </tbody>
 </table>
@@ -1347,29 +1407,29 @@ it easier to debug and optimize the training process.</p>
 </thead>
 <tbody>
 <tr>
-<td>project:</td>
+<td>project</td>
 <td>'runs'</td>
-<td>The project name</td>
+<td>project name</td>
 </tr>
 <tr>
-<td>name:</td>
+<td>name</td>
 <td>'exp'</td>
-<td>The run name. <code>exp</code> gets automatically incremented if not specified, i.e, <code>exp</code>, <code>exp2</code> ...</td>
+<td>experiment name. <code>exp</code> gets automatically incremented if not specified, i.e, <code>exp</code>, <code>exp2</code> ...</td>
 </tr>
 <tr>
-<td>exist_ok:</td>
-<td><code>False</code></td>
-<td>Will replace current directory contents if set to True and output directory exists.</td>
+<td>exist_ok</td>
+<td>False</td>
+<td>whether to overwrite existing experiment</td>
 </tr>
 <tr>
 <td>plots</td>
-<td><code>False</code></td>
-<td><strong>Validation</strong>: Save plots while validation</td>
+<td>False</td>
+<td>save plots during train/val</td>
 </tr>
 <tr>
 <td>save</td>
-<td><code>False</code></td>
-<td>Save any plots, models or files</td>
+<td>False</td>
+<td>save train checkpoints and predict results</td>
 </tr>
 </tbody>
 </table>

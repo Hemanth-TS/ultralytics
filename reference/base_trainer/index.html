@@ -422,7 +422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../config/" class="md-nav__link">
+      <a href="../../cfg/" class="md-nav__link">
         Configuration
       </a>
     </li>
@@ -1772,7 +1772,7 @@ boilerplate. You can override any function of these Trainers to suit your needs.
 <a id="__codelineno-0-79" name="__codelineno-0-79"></a><span class="sd">            config (str, optional): Path to a configuration file. Defaults to DEFAULT_CONFIG.</span>
 <a id="__codelineno-0-80" name="__codelineno-0-80"></a><span class="sd">            overrides (dict, optional): Configuration overrides. Defaults to None.</span>
 <a id="__codelineno-0-81" name="__codelineno-0-81"></a><span class="sd">        &quot;&quot;&quot;</span>
-<a id="__codelineno-0-82" name="__codelineno-0-82"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">overrides</span><span class="p">)</span>
+<a id="__codelineno-0-82" name="__codelineno-0-82"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">get_cfg</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">overrides</span><span class="p">)</span>
 <a id="__codelineno-0-83" name="__codelineno-0-83"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">torch_utils</span><span class="o">.</span><span class="n">select_device</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">device</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">batch</span><span class="p">)</span>
 <a id="__codelineno-0-84" name="__codelineno-0-84"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">check_resume</span><span class="p">()</span>
 <a id="__codelineno-0-85" name="__codelineno-0-85"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">console</span> <span class="o">=</span> <span class="n">LOGGER</span>
@@ -2202,7 +2202,7 @@ boilerplate. You can override any function of these Trainers to suit your needs.
 <a id="__codelineno-0-509" name="__codelineno-0-509"></a>            <span class="k">assert</span> <span class="n">args_yaml</span><span class="o">.</span><span class="n">is_file</span><span class="p">(),</span> \
 <a id="__codelineno-0-510" name="__codelineno-0-510"></a>                <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s1">&#39;Resume checkpoint f</span><span class="si">{last}</span><span class="s1"> not found. &#39;</span>
 <a id="__codelineno-0-511" name="__codelineno-0-511"></a>                                  <span class="s1">&#39;Please pass a valid checkpoint to resume from, i.e. yolo resume=path/to/last.pt&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-512" name="__codelineno-0-512"></a>            <span class="n">args</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">(</span><span class="n">args_yaml</span><span class="p">)</span>  <span class="c1"># replace</span>
+<a id="__codelineno-0-512" name="__codelineno-0-512"></a>            <span class="n">args</span> <span class="o">=</span> <span class="n">get_cfg</span><span class="p">(</span><span class="n">args_yaml</span><span class="p">)</span>  <span class="c1"># replace</span>
 <a id="__codelineno-0-513" name="__codelineno-0-513"></a>            <span class="n">args</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="n">resume</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">last</span><span class="p">),</span> <span class="kc">True</span>  <span class="c1"># reinstate</span>
 <a id="__codelineno-0-514" name="__codelineno-0-514"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span>
 <a id="__codelineno-0-515" name="__codelineno-0-515"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">resume</span> <span class="o">=</span> <span class="n">resume</span>
@@ -2415,7 +2415,7 @@ boilerplate. You can override any function of these Trainers to suit your needs.
 <a id="__codelineno-0-79" name="__codelineno-0-79"></a><span class="sd">        config (str, optional): Path to a configuration file. Defaults to DEFAULT_CONFIG.</span>
 <a id="__codelineno-0-80" name="__codelineno-0-80"></a><span class="sd">        overrides (dict, optional): Configuration overrides. Defaults to None.</span>
 <a id="__codelineno-0-81" name="__codelineno-0-81"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-82" name="__codelineno-0-82"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">overrides</span><span class="p">)</span>
+<a id="__codelineno-0-82" name="__codelineno-0-82"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">get_cfg</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">overrides</span><span class="p">)</span>
 <a id="__codelineno-0-83" name="__codelineno-0-83"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">torch_utils</span><span class="o">.</span><span class="n">select_device</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">device</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">batch</span><span class="p">)</span>
 <a id="__codelineno-0-84" name="__codelineno-0-84"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">check_resume</span><span class="p">()</span>
 <a id="__codelineno-0-85" name="__codelineno-0-85"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">console</span> <span class="o">=</span> <span class="n">LOGGER</span>
