@@ -515,20 +515,6 @@
               
   
   
-  
-    <li class="md-nav__item">
-      <a href="../model/" class="md-nav__link">
-        Python Model interface
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
     
   
   
@@ -538,21 +524,35 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" checked>
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" checked>
       
       
       
-        <label class="md-nav__link" for="__nav_7_2" tabindex="0" aria-expanded="true">
+        <label class="md-nav__link" for="__nav_7_1" tabindex="0" aria-expanded="true">
           Engine
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Engine" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_2">
+        <label class="md-nav__title" for="__nav_7_1">
           <span class="md-nav__icon md-icon"></span>
           Engine
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model/" class="md-nav__link">
+        Model
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -1519,15 +1519,15 @@
 <a id="__codelineno-0-126" name="__codelineno-0-126"></a><span class="sd">        save_dir (Path): Directory to save results.</span>
 <a id="__codelineno-0-127" name="__codelineno-0-127"></a><span class="sd">    &quot;&quot;&quot;</span>
 <a id="__codelineno-0-128" name="__codelineno-0-128"></a>
-<a id="__codelineno-0-129" name="__codelineno-0-129"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">DEFAULT_CFG</span><span class="p">,</span> <span class="n">overrides</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<a id="__codelineno-0-129" name="__codelineno-0-129"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg</span><span class="o">=</span><span class="n">DEFAULT_CFG</span><span class="p">,</span> <span class="n">overrides</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <a id="__codelineno-0-130" name="__codelineno-0-130"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-131" name="__codelineno-0-131"></a><span class="sd">        Initializes the Exporter class.</span>
 <a id="__codelineno-0-132" name="__codelineno-0-132"></a>
 <a id="__codelineno-0-133" name="__codelineno-0-133"></a><span class="sd">        Args:</span>
-<a id="__codelineno-0-134" name="__codelineno-0-134"></a><span class="sd">            config (str, optional): Path to a configuration file. Defaults to DEFAULT_CONFIG.</span>
+<a id="__codelineno-0-134" name="__codelineno-0-134"></a><span class="sd">            cfg (str, optional): Path to a configuration file. Defaults to DEFAULT_CONFIG.</span>
 <a id="__codelineno-0-135" name="__codelineno-0-135"></a><span class="sd">            overrides (dict, optional): Configuration overrides. Defaults to None.</span>
 <a id="__codelineno-0-136" name="__codelineno-0-136"></a><span class="sd">        &quot;&quot;&quot;</span>
-<a id="__codelineno-0-137" name="__codelineno-0-137"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">get_cfg</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">overrides</span><span class="p">)</span>
+<a id="__codelineno-0-137" name="__codelineno-0-137"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">get_cfg</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="n">overrides</span><span class="p">)</span>
 <a id="__codelineno-0-138" name="__codelineno-0-138"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">callbacks</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">callbacks</span><span class="o">.</span><span class="n">default_callbacks</span><span class="o">.</span><span class="n">items</span><span class="p">()})</span>  <span class="c1"># add callbacks</span>
 <a id="__codelineno-0-139" name="__codelineno-0-139"></a>        <span class="n">callbacks</span><span class="o">.</span><span class="n">add_integration_callbacks</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 <a id="__codelineno-0-140" name="__codelineno-0-140"></a>
@@ -1544,7 +1544,7 @@
 <a id="__codelineno-0-151" name="__codelineno-0-151"></a>        <span class="c1"># Load PyTorch model</span>
 <a id="__codelineno-0-152" name="__codelineno-0-152"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="n">select_device</span><span class="p">(</span><span class="s1">&#39;cpu&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">device</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
 <a id="__codelineno-0-153" name="__codelineno-0-153"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">half</span><span class="p">:</span>
-<a id="__codelineno-0-154" name="__codelineno-0-154"></a>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;cpu&#39;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">coreml</span><span class="p">:</span>
+<a id="__codelineno-0-154" name="__codelineno-0-154"></a>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;cpu&#39;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">coreml</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">xml</span><span class="p">:</span>
 <a id="__codelineno-0-155" name="__codelineno-0-155"></a>                <span class="n">LOGGER</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;half=True only compatible with GPU or CoreML export, i.e. use device=0 or format=coreml&#39;</span><span class="p">)</span>
 <a id="__codelineno-0-156" name="__codelineno-0-156"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">half</span> <span class="o">=</span> <span class="kc">False</span>
 <a id="__codelineno-0-157" name="__codelineno-0-157"></a>            <span class="k">assert</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">dynamic</span><span class="p">,</span> <span class="s1">&#39;--half not compatible with --dynamic, i.e. use either --half or --dynamic&#39;</span>
@@ -1577,7 +1577,7 @@
 <a id="__codelineno-0-184" name="__codelineno-0-184"></a>        <span class="n">y</span> <span class="o">=</span> <span class="kc">None</span>
 <a id="__codelineno-0-185" name="__codelineno-0-185"></a>        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
 <a id="__codelineno-0-186" name="__codelineno-0-186"></a>            <span class="n">y</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">im</span><span class="p">)</span>  <span class="c1"># dry runs</span>
-<a id="__codelineno-0-187" name="__codelineno-0-187"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">half</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">coreml</span><span class="p">:</span>
+<a id="__codelineno-0-187" name="__codelineno-0-187"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">half</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">coreml</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">xml</span><span class="p">:</span>
 <a id="__codelineno-0-188" name="__codelineno-0-188"></a>            <span class="n">im</span><span class="p">,</span> <span class="n">model</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">half</span><span class="p">(),</span> <span class="n">model</span><span class="o">.</span><span class="n">half</span><span class="p">()</span>  <span class="c1"># to FP16</span>
 <a id="__codelineno-0-189" name="__codelineno-0-189"></a>        <span class="n">shape</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">((</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="k">else</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># model output shape</span>
 <a id="__codelineno-0-190" name="__codelineno-0-190"></a>        <span class="n">LOGGER</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
@@ -1725,7 +1725,7 @@
 <a id="__codelineno-0-332" name="__codelineno-0-332"></a>        <span class="n">f</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">suffix</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;_openvino_model</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <a id="__codelineno-0-333" name="__codelineno-0-333"></a>        <span class="n">f_onnx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">with_suffix</span><span class="p">(</span><span class="s1">&#39;.onnx&#39;</span><span class="p">)</span>
 <a id="__codelineno-0-334" name="__codelineno-0-334"></a>
-<a id="__codelineno-0-335" name="__codelineno-0-335"></a>        <span class="n">cmd</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;mo --input_model </span><span class="si">{</span><span class="n">f_onnx</span><span class="si">}</span><span class="s2"> --output_dir </span><span class="si">{</span><span class="n">f</span><span class="si">}</span><span class="s2"> --data_type </span><span class="si">{</span><span class="s1">&#39;FP16&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">half</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;FP32&#39;</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-0-335" name="__codelineno-0-335"></a>        <span class="n">cmd</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;mo --input_model </span><span class="si">{</span><span class="n">f_onnx</span><span class="si">}</span><span class="s2"> --output_dir </span><span class="si">{</span><span class="n">f</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="s1">&#39;--compress_to_fp16&#39;</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">half</span><span class="si">}</span><span class="s2">&quot;</span>
 <a id="__codelineno-0-336" name="__codelineno-0-336"></a>        <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">cmd</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">)</span>  <span class="c1"># export</span>
 <a id="__codelineno-0-337" name="__codelineno-0-337"></a>        <span class="n">yaml_save</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">with_suffix</span><span class="p">(</span><span class="s1">&#39;.yaml&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">)</span>  <span class="c1"># add metadata.yaml</span>
 <a id="__codelineno-0-338" name="__codelineno-0-338"></a>        <span class="k">return</span> <span class="n">f</span><span class="p">,</span> <span class="kc">None</span>
@@ -2207,7 +2207,7 @@
 
 
 <h2 id="ultralytics.yolo.engine.exporter.Exporter.__init__" class="doc doc-heading">
-<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="n">DEFAULT_CFG</span><span class="p">,</span> <span class="n">overrides</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">cfg</span><span class="o">=</span><span class="n">DEFAULT_CFG</span><span class="p">,</span> <span class="n">overrides</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h2>
 
@@ -2228,7 +2228,7 @@
     </thead>
     <tbody>
         <tr>
-          <td><code>config</code></td>
+          <td><code>cfg</code></td>
           <td>
                 <code>str</code>
           </td>
@@ -2262,15 +2262,15 @@
 <span class="normal"><a href="#__codelineno-0-136">136</a></span>
 <span class="normal"><a href="#__codelineno-0-137">137</a></span>
 <span class="normal"><a href="#__codelineno-0-138">138</a></span>
-<span class="normal"><a href="#__codelineno-0-139">139</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-129" name="__codelineno-0-129"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">DEFAULT_CFG</span><span class="p">,</span> <span class="n">overrides</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="normal"><a href="#__codelineno-0-139">139</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-129" name="__codelineno-0-129"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg</span><span class="o">=</span><span class="n">DEFAULT_CFG</span><span class="p">,</span> <span class="n">overrides</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <a id="__codelineno-0-130" name="__codelineno-0-130"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-131" name="__codelineno-0-131"></a><span class="sd">    Initializes the Exporter class.</span>
 <a id="__codelineno-0-132" name="__codelineno-0-132"></a>
 <a id="__codelineno-0-133" name="__codelineno-0-133"></a><span class="sd">    Args:</span>
-<a id="__codelineno-0-134" name="__codelineno-0-134"></a><span class="sd">        config (str, optional): Path to a configuration file. Defaults to DEFAULT_CONFIG.</span>
+<a id="__codelineno-0-134" name="__codelineno-0-134"></a><span class="sd">        cfg (str, optional): Path to a configuration file. Defaults to DEFAULT_CONFIG.</span>
 <a id="__codelineno-0-135" name="__codelineno-0-135"></a><span class="sd">        overrides (dict, optional): Configuration overrides. Defaults to None.</span>
 <a id="__codelineno-0-136" name="__codelineno-0-136"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-137" name="__codelineno-0-137"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">get_cfg</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">overrides</span><span class="p">)</span>
+<a id="__codelineno-0-137" name="__codelineno-0-137"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">get_cfg</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="n">overrides</span><span class="p">)</span>
 <a id="__codelineno-0-138" name="__codelineno-0-138"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">callbacks</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">callbacks</span><span class="o">.</span><span class="n">default_callbacks</span><span class="o">.</span><span class="n">items</span><span class="p">()})</span>  <span class="c1"># add callbacks</span>
 <a id="__codelineno-0-139" name="__codelineno-0-139"></a>    <span class="n">callbacks</span><span class="o">.</span><span class="n">add_integration_callbacks</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>

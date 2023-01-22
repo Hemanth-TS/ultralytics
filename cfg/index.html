@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#setting-the-operation-type" class="md-skip">
+        <a href="#tasks" class="md-skip">
           Skip to content
         </a>
       
@@ -452,8 +452,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#setting-the-operation-type" class="md-nav__link">
-    Setting the operation type
+  <a href="#tasks" class="md-nav__link">
+    Tasks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modes" class="md-nav__link">
+    Modes
   </a>
   
 </li>
@@ -595,20 +602,6 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../reference/model/" class="md-nav__link">
-        Python Model interface
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
     
     <li class="md-nav__item md-nav__item--nested">
       
@@ -617,21 +610,35 @@
       
         
       
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" >
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" >
       
       
       
-        <label class="md-nav__link" for="__nav_7_2" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_7_1" tabindex="0" aria-expanded="false">
           Engine
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Engine" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_2">
+        <label class="md-nav__title" for="__nav_7_1">
           <span class="md-nav__icon md-icon"></span>
           Engine
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/model/" class="md-nav__link">
+        Model
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -769,8 +776,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#setting-the-operation-type" class="md-nav__link">
-    Setting the operation type
+  <a href="#tasks" class="md-nav__link">
+    Tasks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modes" class="md-nav__link">
+    Modes
   </a>
   
 </li>
@@ -846,36 +860,50 @@
 <p>YOLO settings and hyperparameters play a critical role in the model's performance, speed, and accuracy. These settings
 and hyperparameters can affect the model's behavior at various stages of the model development process, including
 training, validation, and prediction.</p>
-<p>Properly setting and tuning these parameters can have a significant impact on the model's ability to learn effectively
-from the training data and generalize to new data. For example, choosing an appropriate learning rate, batch size, and
-optimization algorithm can greatly affect the model's convergence speed and accuracy. Similarly, setting the correct
-confidence threshold and non-maximum suppression (NMS) threshold can affect the model's performance on detection tasks.</p>
-<p>It is important to carefully consider and experiment with these settings and hyperparameters to achieve the best
-possible performance for a given task. This can involve trial and error, as well as using techniques such as
-hyperparameter optimization to search for the optimal set of parameters.</p>
-<p>In summary, YOLO settings and hyperparameters are a key factor in the success of a YOLO model, and it is important to
-pay careful attention to them to achieve the desired results.</p>
-<h3 id="setting-the-operation-type">Setting the operation type</h3>
+<p>YOLOv8 'yolo' CLI commands use the following syntax:</p>
+<div class="admonition example">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">CLI</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>yolo<span class="w"> </span>TASK<span class="w"> </span>MODE<span class="w"> </span>ARGS
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p>Where:</p>
+<ul>
+<li><code>TASK</code> (optional) is one of <code>[detect, segment, classify]</code>. If it is not passed explicitly YOLOv8 will try to guess
+  the <code>TASK</code> from the model type.</li>
+<li><code>MODE</code> (required) is one of <code>[train, val, predict, export]</code></li>
+<li><code>ARGS</code> (optional) are any number of custom <code>arg=value</code> pairs like <code>imgsz=320</code> that override defaults.
+  For a full list of available <code>ARGS</code> see the <a href="./">Configuration</a> page and <code>defaults.yaml</code>
+  GitHub <a href="https://github.com/ultralytics/ultralytics/blob/main/ultralytics/yolo/cfg/default.yaml">source</a>.</li>
+</ul>
+<h4 id="tasks">Tasks</h4>
 <p>YOLO models can be used for a variety of tasks, including detection, segmentation, and classification. These tasks
 differ in the type of output they produce and the specific problem they are designed to solve.</p>
 <ul>
-<li>Detection: Detection tasks involve identifying and localizing objects or regions of interest in an image or video.
+<li><strong>Detect</strong>: Detection tasks involve identifying and localizing objects or regions of interest in an image or video.
   YOLO models can be used for object detection tasks by predicting the bounding boxes and class labels of objects in an
   image.</li>
-<li>Segmentation: Segmentation tasks involve dividing an image or video into regions or pixels that correspond to
+<li><strong>Segment</strong>: Segmentation tasks involve dividing an image or video into regions or pixels that correspond to
   different objects or classes. YOLO models can be used for image segmentation tasks by predicting a mask or label for
   each pixel in an image.</li>
-<li>Classification: Classification tasks involve assigning a class label to an input, such as an image or text. YOLO
+<li><strong>Classify</strong>: Classification tasks involve assigning a class label to an input, such as an image or text. YOLO
   models can be used for image classification tasks by predicting the class label of an input image.</li>
 </ul>
+<h4 id="modes">Modes</h4>
 <p>YOLO models can be used in different modes depending on the specific problem you are trying to solve. These modes
 include train, val, and predict.</p>
 <ul>
-<li>Train: The train mode is used to train the model on a dataset. This mode is typically used during the development and
+<li><strong>Train</strong>: The train mode is used to train the model on a dataset. This mode is typically used during the development
+  and
   testing phase of a model.</li>
-<li>Val: The val mode is used to evaluate the model's performance on a validation dataset. This mode is typically used to
+<li><strong>Val</strong>: The val mode is used to evaluate the model's performance on a validation dataset. This mode is typically used
+  to
   tune the model's hyperparameters and detect overfitting.</li>
-<li>Predict: The predict mode is used to make predictions with the model on new data. This mode is typically used in
+<li><strong>Predict</strong>: The predict mode is used to make predictions with the model on new data. This mode is typically used in
   production or when deploying the model to users.</li>
 </ul>
 <table>

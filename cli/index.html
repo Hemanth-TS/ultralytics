@@ -588,20 +588,6 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../reference/model/" class="md-nav__link">
-        Python Model interface
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
     
     <li class="md-nav__item md-nav__item--nested">
       
@@ -610,21 +596,35 @@
       
         
       
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" >
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" >
       
       
       
-        <label class="md-nav__link" for="__nav_7_2" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_7_1" tabindex="0" aria-expanded="false">
           Engine
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Engine" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_2">
+        <label class="md-nav__title" for="__nav_7_1">
           <span class="md-nav__icon md-icon"></span>
           Engine
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/model/" class="md-nav__link">
+        Model
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -847,8 +847,9 @@ YOLOv8 models.</p>
 <li><code>TASK</code> (optional) is one of <code>[detect, segment, classify]</code>. If it is not passed explicitly YOLOv8 will try to guess
   the <code>TASK</code> from the model type.</li>
 <li><code>MODE</code> (required) is one of <code>[train, val, predict, export]</code></li>
-<li><code>ARGS</code> (optional) are any number of custom <code>arg=value</code> pairs like <code>imgsz=320</code> that override defaults. 
-  For a full list of available <code>ARGS</code> see the <a href="../cfg/">Configuration</a> page.</li>
+<li><code>ARGS</code> (optional) are any number of custom <code>arg=value</code> pairs like <code>imgsz=320</code> that override defaults.
+  For a full list of available <code>ARGS</code> see the <a href="../cfg/">Configuration</a> page and <code>defaults.yaml</code>
+  GitHub <a href="https://github.com/ultralytics/ultralytics/blob/main/ultralytics/yolo/cfg/default.yaml">source</a>.</li>
 </ul>
 <div class="admonition note">
 <p><b>Note:</b> Arguments MUST be passed as <code>arg=val</code> with an equals sign and a space between <code>arg=val</code> pairs</p>
