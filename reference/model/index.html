@@ -605,6 +605,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ultralytics.yolo.engine.model.YOLO.add_callback" class="md-nav__link">
+    add_callback()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ultralytics.yolo.engine.model.YOLO.export" class="md-nav__link">
     export()
   </a>
@@ -827,6 +834,13 @@
           <li class="md-nav__item">
   <a href="#ultralytics.yolo.engine.model.YOLO.__init__" class="md-nav__link">
     __init__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ultralytics.yolo.engine.model.YOLO.add_callback" class="md-nav__link">
+    add_callback()
   </a>
   
 </li>
@@ -1167,7 +1181,13 @@
 <span class="normal"><a href="#__codelineno-0-242">242</a></span>
 <span class="normal"><a href="#__codelineno-0-243">243</a></span>
 <span class="normal"><a href="#__codelineno-0-244">244</a></span>
-<span class="normal"><a href="#__codelineno-0-245">245</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="k">class</span> <span class="nc">YOLO</span><span class="p">:</span>
+<span class="normal"><a href="#__codelineno-0-245">245</a></span>
+<span class="normal"><a href="#__codelineno-0-246">246</a></span>
+<span class="normal"><a href="#__codelineno-0-247">247</a></span>
+<span class="normal"><a href="#__codelineno-0-248">248</a></span>
+<span class="normal"><a href="#__codelineno-0-249">249</a></span>
+<span class="normal"><a href="#__codelineno-0-250">250</a></span>
+<span class="normal"><a href="#__codelineno-0-251">251</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="k">class</span> <span class="nc">YOLO</span><span class="p">:</span>
 <a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="sd">    YOLO</span>
 <a id="__codelineno-0-29" name="__codelineno-0-29"></a>
@@ -1212,7 +1232,7 @@
 <a id="__codelineno-0-68" name="__codelineno-0-68"></a><span class="sd">        &quot;&quot;&quot;</span>
 <a id="__codelineno-0-69" name="__codelineno-0-69"></a>        <span class="n">cfg</span> <span class="o">=</span> <span class="n">check_yaml</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span>  <span class="c1"># check YAML</span>
 <a id="__codelineno-0-70" name="__codelineno-0-70"></a>        <span class="n">cfg_dict</span> <span class="o">=</span> <span class="n">yaml_load</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="n">append_filename</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># model dict</span>
-<a id="__codelineno-0-71" name="__codelineno-0-71"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">task</span> <span class="o">=</span> <span class="n">guess_task_from_head</span><span class="p">(</span><span class="n">cfg_dict</span><span class="p">[</span><span class="s2">&quot;head&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+<a id="__codelineno-0-71" name="__codelineno-0-71"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">task</span> <span class="o">=</span> <span class="n">guess_task_from_model_yaml</span><span class="p">(</span><span class="n">cfg_dict</span><span class="p">)</span>
 <a id="__codelineno-0-72" name="__codelineno-0-72"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">ModelClass</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">TrainerClass</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ValidatorClass</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">PredictorClass</span> <span class="o">=</span> \
 <a id="__codelineno-0-73" name="__codelineno-0-73"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_guess_ops_from_task</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">task</span><span class="p">)</span>
 <a id="__codelineno-0-74" name="__codelineno-0-74"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ModelClass</span><span class="p">(</span><span class="n">cfg_dict</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">)</span>  <span class="c1"># initialize</span>
@@ -1372,21 +1392,27 @@
 <a id="__codelineno-0-228" name="__codelineno-0-228"></a><span class="sd">        &quot;&quot;&quot;</span>
 <a id="__codelineno-0-229" name="__codelineno-0-229"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">names</span>
 <a id="__codelineno-0-230" name="__codelineno-0-230"></a>
-<a id="__codelineno-0-231" name="__codelineno-0-231"></a>    <span class="nd">@staticmethod</span>
-<a id="__codelineno-0-232" name="__codelineno-0-232"></a>    <span class="k">def</span> <span class="nf">_reset_ckpt_args</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
-<a id="__codelineno-0-233" name="__codelineno-0-233"></a>        <span class="n">args</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;project&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<a id="__codelineno-0-234" name="__codelineno-0-234"></a>        <span class="n">args</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<a id="__codelineno-0-235" name="__codelineno-0-235"></a>        <span class="n">args</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;exist_ok&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<a id="__codelineno-0-236" name="__codelineno-0-236"></a>        <span class="n">args</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;resume&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<a id="__codelineno-0-237" name="__codelineno-0-237"></a>        <span class="n">args</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;batch&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<a id="__codelineno-0-238" name="__codelineno-0-238"></a>        <span class="n">args</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;epochs&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<a id="__codelineno-0-239" name="__codelineno-0-239"></a>        <span class="n">args</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;cache&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<a id="__codelineno-0-240" name="__codelineno-0-240"></a>        <span class="n">args</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;save_json&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<a id="__codelineno-0-241" name="__codelineno-0-241"></a>        <span class="n">args</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;half&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<a id="__codelineno-0-242" name="__codelineno-0-242"></a>        <span class="n">args</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;v5loader&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<a id="__codelineno-0-243" name="__codelineno-0-243"></a>
-<a id="__codelineno-0-244" name="__codelineno-0-244"></a>        <span class="c1"># set device to &#39;&#39; to prevent from auto DDP usage</span>
-<a id="__codelineno-0-245" name="__codelineno-0-245"></a>        <span class="n">args</span><span class="p">[</span><span class="s2">&quot;device&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<a id="__codelineno-0-231" name="__codelineno-0-231"></a>    <span class="k">def</span> <span class="nf">add_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+<a id="__codelineno-0-232" name="__codelineno-0-232"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-233" name="__codelineno-0-233"></a><span class="sd">        Add callback</span>
+<a id="__codelineno-0-234" name="__codelineno-0-234"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a id="__codelineno-0-235" name="__codelineno-0-235"></a>        <span class="n">callbacks</span><span class="o">.</span><span class="n">default_callbacks</span><span class="p">[</span><span class="n">event</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+<a id="__codelineno-0-236" name="__codelineno-0-236"></a>
+<a id="__codelineno-0-237" name="__codelineno-0-237"></a>    <span class="nd">@staticmethod</span>
+<a id="__codelineno-0-238" name="__codelineno-0-238"></a>    <span class="k">def</span> <span class="nf">_reset_ckpt_args</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+<a id="__codelineno-0-239" name="__codelineno-0-239"></a>        <span class="n">args</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;project&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<a id="__codelineno-0-240" name="__codelineno-0-240"></a>        <span class="n">args</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<a id="__codelineno-0-241" name="__codelineno-0-241"></a>        <span class="n">args</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;exist_ok&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<a id="__codelineno-0-242" name="__codelineno-0-242"></a>        <span class="n">args</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;resume&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<a id="__codelineno-0-243" name="__codelineno-0-243"></a>        <span class="n">args</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;batch&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<a id="__codelineno-0-244" name="__codelineno-0-244"></a>        <span class="n">args</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;epochs&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<a id="__codelineno-0-245" name="__codelineno-0-245"></a>        <span class="n">args</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;cache&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<a id="__codelineno-0-246" name="__codelineno-0-246"></a>        <span class="n">args</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;save_json&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<a id="__codelineno-0-247" name="__codelineno-0-247"></a>        <span class="n">args</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;half&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<a id="__codelineno-0-248" name="__codelineno-0-248"></a>        <span class="n">args</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;v5loader&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<a id="__codelineno-0-249" name="__codelineno-0-249"></a>
+<a id="__codelineno-0-250" name="__codelineno-0-250"></a>        <span class="c1"># set device to &#39;&#39; to prevent from auto DDP usage</span>
+<a id="__codelineno-0-251" name="__codelineno-0-251"></a>        <span class="n">args</span><span class="p">[</span><span class="s2">&quot;device&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 </code></pre></div></td></tr></table></div>
         </details>
 
@@ -1520,6 +1546,37 @@
 <a id="__codelineno-0-54" name="__codelineno-0-54"></a>
 <a id="__codelineno-0-55" name="__codelineno-0-55"></a>    <span class="c1"># Load or create new YOLO model</span>
 <a id="__codelineno-0-56" name="__codelineno-0-56"></a>    <span class="p">{</span><span class="s1">&#39;.pt&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load</span><span class="p">,</span> <span class="s1">&#39;.yaml&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_new</span><span class="p">}[</span><span class="n">Path</span><span class="p">(</span><span class="n">model</span><span class="p">)</span><span class="o">.</span><span class="n">suffix</span><span class="p">](</span><span class="n">model</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="ultralytics.yolo.engine.model.YOLO.add_callback" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">add_callback</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">func</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Add callback</p>
+
+      <details class="quote">
+        <summary>Source code in <code>ultralytics/yolo/engine/model.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-231">231</a></span>
+<span class="normal"><a href="#__codelineno-0-232">232</a></span>
+<span class="normal"><a href="#__codelineno-0-233">233</a></span>
+<span class="normal"><a href="#__codelineno-0-234">234</a></span>
+<span class="normal"><a href="#__codelineno-0-235">235</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-231" name="__codelineno-0-231"></a><span class="k">def</span> <span class="nf">add_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+<a id="__codelineno-0-232" name="__codelineno-0-232"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-233" name="__codelineno-0-233"></a><span class="sd">    Add callback</span>
+<a id="__codelineno-0-234" name="__codelineno-0-234"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-235" name="__codelineno-0-235"></a>    <span class="n">callbacks</span><span class="o">.</span><span class="n">default_callbacks</span><span class="p">[</span><span class="n">event</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
