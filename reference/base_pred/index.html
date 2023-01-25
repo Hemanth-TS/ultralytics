@@ -1158,12 +1158,12 @@ You can override any function of these Trainers to suit your needs.</p>
 <a id="__codelineno-0-61" name="__codelineno-0-61"></a><span class="sd">        data_path (str): Path to data.</span>
 <a id="__codelineno-0-62" name="__codelineno-0-62"></a><span class="sd">    &quot;&quot;&quot;</span>
 <a id="__codelineno-0-63" name="__codelineno-0-63"></a>
-<a id="__codelineno-0-64" name="__codelineno-0-64"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg</span><span class="o">=</span><span class="n">DEFAULT_CFG_PATH</span><span class="p">,</span> <span class="n">overrides</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<a id="__codelineno-0-64" name="__codelineno-0-64"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg</span><span class="o">=</span><span class="n">DEFAULT_CFG</span><span class="p">,</span> <span class="n">overrides</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <a id="__codelineno-0-65" name="__codelineno-0-65"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-66" name="__codelineno-0-66"></a><span class="sd">        Initializes the BasePredictor class.</span>
 <a id="__codelineno-0-67" name="__codelineno-0-67"></a>
 <a id="__codelineno-0-68" name="__codelineno-0-68"></a><span class="sd">        Args:</span>
-<a id="__codelineno-0-69" name="__codelineno-0-69"></a><span class="sd">            cfg (str, optional): Path to a configuration file. Defaults to DEFAULT_CONFIG.</span>
+<a id="__codelineno-0-69" name="__codelineno-0-69"></a><span class="sd">            cfg (str, optional): Path to a configuration file. Defaults to DEFAULT_CFG.</span>
 <a id="__codelineno-0-70" name="__codelineno-0-70"></a><span class="sd">            overrides (dict, optional): Configuration overrides. Defaults to None.</span>
 <a id="__codelineno-0-71" name="__codelineno-0-71"></a><span class="sd">        &quot;&quot;&quot;</span>
 <a id="__codelineno-0-72" name="__codelineno-0-72"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">get_cfg</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="n">overrides</span><span class="p">)</span>
@@ -1401,7 +1401,7 @@ You can override any function of these Trainers to suit your needs.</p>
 
 
 <h2 id="ultralytics.yolo.engine.predictor.BasePredictor.__init__" class="doc doc-heading">
-<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">cfg</span><span class="o">=</span><span class="n">DEFAULT_CFG_PATH</span><span class="p">,</span> <span class="n">overrides</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">cfg</span><span class="o">=</span><span class="n">DEFAULT_CFG</span><span class="p">,</span> <span class="n">overrides</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h2>
 
@@ -1426,9 +1426,9 @@ You can override any function of these Trainers to suit your needs.</p>
           <td>
                 <code>str</code>
           </td>
-          <td><p>Path to a configuration file. Defaults to DEFAULT_CONFIG.</p></td>
+          <td><p>Path to a configuration file. Defaults to DEFAULT_CFG.</p></td>
           <td>
-                <code>DEFAULT_CFG_PATH</code>
+                <code>DEFAULT_CFG</code>
           </td>
         </tr>
         <tr>
@@ -1474,12 +1474,12 @@ You can override any function of these Trainers to suit your needs.</p>
 <span class="normal"><a href="#__codelineno-0-89">89</a></span>
 <span class="normal"><a href="#__codelineno-0-90">90</a></span>
 <span class="normal"><a href="#__codelineno-0-91">91</a></span>
-<span class="normal"><a href="#__codelineno-0-92">92</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-64" name="__codelineno-0-64"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg</span><span class="o">=</span><span class="n">DEFAULT_CFG_PATH</span><span class="p">,</span> <span class="n">overrides</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="normal"><a href="#__codelineno-0-92">92</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-64" name="__codelineno-0-64"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg</span><span class="o">=</span><span class="n">DEFAULT_CFG</span><span class="p">,</span> <span class="n">overrides</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <a id="__codelineno-0-65" name="__codelineno-0-65"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-66" name="__codelineno-0-66"></a><span class="sd">    Initializes the BasePredictor class.</span>
 <a id="__codelineno-0-67" name="__codelineno-0-67"></a>
 <a id="__codelineno-0-68" name="__codelineno-0-68"></a><span class="sd">    Args:</span>
-<a id="__codelineno-0-69" name="__codelineno-0-69"></a><span class="sd">        cfg (str, optional): Path to a configuration file. Defaults to DEFAULT_CONFIG.</span>
+<a id="__codelineno-0-69" name="__codelineno-0-69"></a><span class="sd">        cfg (str, optional): Path to a configuration file. Defaults to DEFAULT_CFG.</span>
 <a id="__codelineno-0-70" name="__codelineno-0-70"></a><span class="sd">        overrides (dict, optional): Configuration overrides. Defaults to None.</span>
 <a id="__codelineno-0-71" name="__codelineno-0-71"></a><span class="sd">    &quot;&quot;&quot;</span>
 <a id="__codelineno-0-72" name="__codelineno-0-72"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">get_cfg</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="n">overrides</span><span class="p">)</span>

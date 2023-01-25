@@ -1776,12 +1776,12 @@ boilerplate. You can override any function of these Trainers to suit your needs.
 <a id="__codelineno-0-71" name="__codelineno-0-71"></a><span class="sd">        csv (Path): Path to results CSV file.</span>
 <a id="__codelineno-0-72" name="__codelineno-0-72"></a><span class="sd">    &quot;&quot;&quot;</span>
 <a id="__codelineno-0-73" name="__codelineno-0-73"></a>
-<a id="__codelineno-0-74" name="__codelineno-0-74"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg</span><span class="o">=</span><span class="n">DEFAULT_CFG_PATH</span><span class="p">,</span> <span class="n">overrides</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<a id="__codelineno-0-74" name="__codelineno-0-74"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg</span><span class="o">=</span><span class="n">DEFAULT_CFG</span><span class="p">,</span> <span class="n">overrides</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <a id="__codelineno-0-75" name="__codelineno-0-75"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-76" name="__codelineno-0-76"></a><span class="sd">        Initializes the BaseTrainer class.</span>
 <a id="__codelineno-0-77" name="__codelineno-0-77"></a>
 <a id="__codelineno-0-78" name="__codelineno-0-78"></a><span class="sd">        Args:</span>
-<a id="__codelineno-0-79" name="__codelineno-0-79"></a><span class="sd">            cfg (str, optional): Path to a configuration file. Defaults to DEFAULT_CONFIG.</span>
+<a id="__codelineno-0-79" name="__codelineno-0-79"></a><span class="sd">            cfg (str, optional): Path to a configuration file. Defaults to DEFAULT_CFG.</span>
 <a id="__codelineno-0-80" name="__codelineno-0-80"></a><span class="sd">            overrides (dict, optional): Configuration overrides. Defaults to None.</span>
 <a id="__codelineno-0-81" name="__codelineno-0-81"></a><span class="sd">        &quot;&quot;&quot;</span>
 <a id="__codelineno-0-82" name="__codelineno-0-82"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">get_cfg</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="n">overrides</span><span class="p">)</span>
@@ -2316,7 +2316,7 @@ boilerplate. You can override any function of these Trainers to suit your needs.
 
 
 <h2 id="ultralytics.yolo.engine.trainer.BaseTrainer.__init__" class="doc doc-heading">
-<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">cfg</span><span class="o">=</span><span class="n">DEFAULT_CFG_PATH</span><span class="p">,</span> <span class="n">overrides</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">cfg</span><span class="o">=</span><span class="n">DEFAULT_CFG</span><span class="p">,</span> <span class="n">overrides</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h2>
 
@@ -2341,9 +2341,9 @@ boilerplate. You can override any function of these Trainers to suit your needs.
           <td>
                 <code>str</code>
           </td>
-          <td><p>Path to a configuration file. Defaults to DEFAULT_CONFIG.</p></td>
+          <td><p>Path to a configuration file. Defaults to DEFAULT_CFG.</p></td>
           <td>
-                <code>DEFAULT_CFG_PATH</code>
+                <code>DEFAULT_CFG</code>
           </td>
         </tr>
         <tr>
@@ -2433,12 +2433,12 @@ boilerplate. You can override any function of these Trainers to suit your needs.
 <span class="normal"><a href="#__codelineno-0-143">143</a></span>
 <span class="normal"><a href="#__codelineno-0-144">144</a></span>
 <span class="normal"><a href="#__codelineno-0-145">145</a></span>
-<span class="normal"><a href="#__codelineno-0-146">146</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-74" name="__codelineno-0-74"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg</span><span class="o">=</span><span class="n">DEFAULT_CFG_PATH</span><span class="p">,</span> <span class="n">overrides</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="normal"><a href="#__codelineno-0-146">146</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-74" name="__codelineno-0-74"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg</span><span class="o">=</span><span class="n">DEFAULT_CFG</span><span class="p">,</span> <span class="n">overrides</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <a id="__codelineno-0-75" name="__codelineno-0-75"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-76" name="__codelineno-0-76"></a><span class="sd">    Initializes the BaseTrainer class.</span>
 <a id="__codelineno-0-77" name="__codelineno-0-77"></a>
 <a id="__codelineno-0-78" name="__codelineno-0-78"></a><span class="sd">    Args:</span>
-<a id="__codelineno-0-79" name="__codelineno-0-79"></a><span class="sd">        cfg (str, optional): Path to a configuration file. Defaults to DEFAULT_CONFIG.</span>
+<a id="__codelineno-0-79" name="__codelineno-0-79"></a><span class="sd">        cfg (str, optional): Path to a configuration file. Defaults to DEFAULT_CFG.</span>
 <a id="__codelineno-0-80" name="__codelineno-0-80"></a><span class="sd">        overrides (dict, optional): Configuration overrides. Defaults to None.</span>
 <a id="__codelineno-0-81" name="__codelineno-0-81"></a><span class="sd">    &quot;&quot;&quot;</span>
 <a id="__codelineno-0-82" name="__codelineno-0-82"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">get_cfg</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span> <span class="n">overrides</span><span class="p">)</span>

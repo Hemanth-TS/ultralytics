@@ -1056,14 +1056,14 @@ training <code>data</code> and arguments as model attributes.</p>
 <h2 id="overriding-default-config-file">Overriding default config file</h2>
 <p>You can override the <code>default.yaml</code> config file entirely by passing a new file with the <code>cfg</code> arguments,
 i.e. <code>cfg=custom.yaml</code>.</p>
-<p>To do this first create a copy of <code>default.yaml</code> in your current working dir with the <code>yolo copy-config</code> command.</p>
+<p>To do this first create a copy of <code>default.yaml</code> in your current working dir with the <code>yolo copy-cfg</code> command.</p>
 <p>This will create <code>default_copy.yaml</code>, which you can then pass as <code>cfg=default_copy.yaml</code> along with any additional args,
 like <code>imgsz=320</code> in this example:</p>
 <div class="admonition example">
 <div class="tabbed-set tabbed-alternate" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">CLI</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>yolo<span class="w"> </span>copy-config
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>yolo<span class="w"> </span>copy-cfg
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>yolo<span class="w"> </span><span class="nv">cfg</span><span class="o">=</span>default_copy.yaml<span class="w"> </span><span class="nv">imgsz</span><span class="o">=</span><span class="m">320</span>
 </code></pre></div>
 </div>
