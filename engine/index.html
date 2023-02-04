@@ -828,12 +828,12 @@
 <p>Both the Ultralytics YOLO command-line and python interfaces are simply a high-level abstraction on the base engine
 executors. Let's take a look at the Trainer engine.</p>
 <h2 id="basetrainer">BaseTrainer</h2>
-<p>BaseTrainer contains the generic boilerplate training routine. It can be customized for any task based over overidding
+<p>BaseTrainer contains the generic boilerplate training routine. It can be customized for any task based over overriding
 the required functions or operations as long the as correct formats are followed. For example, you can support your own
-custom model and dataloder by just overriding these functions:</p>
+custom model and dataloader by just overriding these functions:</p>
 <ul>
 <li><code>get_model(cfg, weights)</code> - The function that builds the model to be trained</li>
-<li><code>get_dataloder()</code> - The function that builds the dataloder
+<li><code>get_dataloder()</code> - The function that builds the dataloader
   More details and source code can be found in <a href="../reference/base_trainer/"><code>BaseTrainer</code> Reference</a></li>
 </ul>
 <h2 id="detectiontrainer">DetectionTrainer</h2>
@@ -891,7 +891,7 @@ simply overloading the existing the <code>get_model</code> functionality:</p>
 </code></pre></div>
 <p>To know more about Callback triggering events and entry point, checkout our Callbacks guide # TODO</p>
 <h2 id="other-engine-components">Other engine components</h2>
-<p>There are other componenets that can be customized similarly like <code>Validators</code> and <code>Predictors</code>
+<p>There are other components that can be customized similarly like <code>Validators</code> and <code>Predictors</code>
 See Reference section for more information on these.</p>
 
 
