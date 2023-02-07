@@ -875,98 +875,31 @@ YOLOv8 models.</p>
 <p>Train YOLOv8n on the COCO128 dataset for 100 epochs at image size 640. For a full list of available arguments see
 the <a href="../cfg/">Configuration</a> page.</p>
 <div class="admonition example">
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">CLI</label><label for="__tabbed_2_2">Python</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>yolo<span class="w"> </span>detect<span class="w"> </span>train<span class="w"> </span><span class="nv">data</span><span class="o">=</span>coco128.yaml<span class="w"> </span><span class="nv">model</span><span class="o">=</span>yolov8n.pt<span class="w"> </span><span class="nv">epochs</span><span class="o">=</span><span class="m">100</span><span class="w"> </span><span class="nv">imgsz</span><span class="o">=</span><span class="m">640</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>yolo<span class="w"> </span>detect<span class="w"> </span>train<span class="w"> </span>resume<span class="w"> </span><span class="nv">model</span><span class="o">=</span>last.pt<span class="w">  </span><span class="c1"># resume training</span>
 </code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span> <span class="nn">ultralytics</span> <span class="kn">import</span> <span class="n">YOLO</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># Load a model</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">model</span> <span class="o">=</span> <span class="n">YOLO</span><span class="p">(</span><span class="s2">&quot;yolov8n.yaml&quot;</span><span class="p">)</span>  <span class="c1"># build a new model from scratch</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">model</span> <span class="o">=</span> <span class="n">YOLO</span><span class="p">(</span><span class="s2">&quot;yolov8n.pt&quot;</span><span class="p">)</span>  <span class="c1"># load a pretrained model (recommended for training)</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># Train the model</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s2">&quot;coco128.yaml&quot;</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">imgsz</span><span class="o">=</span><span class="mi">640</span><span class="p">)</span>
-</code></pre></div>
-</div>
-</div>
-</div>
 </div>
 <h2 id="val">Val</h2>
 <p>Validate trained YOLOv8n model accuracy on the COCO128 dataset. No argument need to passed as the <code>model</code> retains it's
 training <code>data</code> and arguments as model attributes.</p>
 <div class="admonition example">
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">CLI</label><label for="__tabbed_3_2">Python</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>yolo<span class="w"> </span>detect<span class="w"> </span>val<span class="w"> </span><span class="nv">model</span><span class="o">=</span>yolov8n.pt<span class="w">  </span><span class="c1"># val official model</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>yolo<span class="w"> </span>detect<span class="w"> </span>val<span class="w"> </span><span class="nv">model</span><span class="o">=</span>path/to/best.pt<span class="w">  </span><span class="c1"># val custom model</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>yolo<span class="w"> </span>detect<span class="w"> </span>val<span class="w"> </span><span class="nv">model</span><span class="o">=</span>yolov8n.pt<span class="w">  </span><span class="c1"># val official model</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>yolo<span class="w"> </span>detect<span class="w"> </span>val<span class="w"> </span><span class="nv">model</span><span class="o">=</span>path/to/best.pt<span class="w">  </span><span class="c1"># val custom model</span>
 </code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span> <span class="nn">ultralytics</span> <span class="kn">import</span> <span class="n">YOLO</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># Load a model</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">model</span> <span class="o">=</span> <span class="n">YOLO</span><span class="p">(</span><span class="s2">&quot;yolov8n.pt&quot;</span><span class="p">)</span>  <span class="c1"># load an official model</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">model</span> <span class="o">=</span> <span class="n">YOLO</span><span class="p">(</span><span class="s2">&quot;path/to/best.pt&quot;</span><span class="p">)</span>  <span class="c1"># load a custom model</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># Validate the model</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">val</span><span class="p">()</span>  <span class="c1"># no arguments needed, dataset and settings remembered</span>
-</code></pre></div>
-</div>
-</div>
-</div>
 </div>
 <h2 id="predict">Predict</h2>
 <p>Use a trained YOLOv8n model to run predictions on images.</p>
 <div class="admonition example">
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">CLI</label><label for="__tabbed_4_2">Python</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>yolo<span class="w"> </span>detect<span class="w"> </span>predict<span class="w"> </span><span class="nv">model</span><span class="o">=</span>yolov8n.pt<span class="w"> </span><span class="nv">source</span><span class="o">=</span><span class="s2">&quot;https://ultralytics.com/images/bus.jpg&quot;</span><span class="w">  </span><span class="c1"># predict with official model</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>yolo<span class="w"> </span>detect<span class="w"> </span>predict<span class="w"> </span><span class="nv">model</span><span class="o">=</span>path/to/best.pt<span class="w"> </span><span class="nv">source</span><span class="o">=</span><span class="s2">&quot;https://ultralytics.com/images/bus.jpg&quot;</span><span class="w">  </span><span class="c1"># predict with custom model</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>yolo<span class="w"> </span>detect<span class="w"> </span>predict<span class="w"> </span><span class="nv">model</span><span class="o">=</span>yolov8n.pt<span class="w"> </span><span class="nv">source</span><span class="o">=</span><span class="s2">&quot;https://ultralytics.com/images/bus.jpg&quot;</span><span class="w">  </span><span class="c1"># predict with official model</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>yolo<span class="w"> </span>detect<span class="w"> </span>predict<span class="w"> </span><span class="nv">model</span><span class="o">=</span>path/to/best.pt<span class="w"> </span><span class="nv">source</span><span class="o">=</span><span class="s2">&quot;https://ultralytics.com/images/bus.jpg&quot;</span><span class="w">  </span><span class="c1"># predict with custom model</span>
 </code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">from</span> <span class="nn">ultralytics</span> <span class="kn">import</span> <span class="n">YOLO</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># Load a model</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">model</span> <span class="o">=</span> <span class="n">YOLO</span><span class="p">(</span><span class="s2">&quot;yolov8n.pt&quot;</span><span class="p">)</span>  <span class="c1"># load an official model</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">model</span> <span class="o">=</span> <span class="n">YOLO</span><span class="p">(</span><span class="s2">&quot;path/to/best.pt&quot;</span><span class="p">)</span>  <span class="c1"># load a custom model</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># Predict with the model</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="s2">&quot;https://ultralytics.com/images/bus.jpg&quot;</span><span class="p">)</span>  <span class="c1"># predict on an image</span>
-</code></pre></div>
-</div>
-</div>
-</div>
 </div>
 <h2 id="export">Export</h2>
 <p>Export a YOLOv8n model to a different format like ONNX, CoreML, etc.</p>
 <div class="admonition example">
-<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">CLI</label><label for="__tabbed_5_2">Python</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>yolo<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">model</span><span class="o">=</span>yolov8n.pt<span class="w"> </span><span class="nv">format</span><span class="o">=</span>onnx<span class="w">  </span><span class="c1"># export official model</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>yolo<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">model</span><span class="o">=</span>path/to/best.pt<span class="w"> </span><span class="nv">format</span><span class="o">=</span>onnx<span class="w">  </span><span class="c1"># export custom trained model</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>yolo<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">model</span><span class="o">=</span>yolov8n.pt<span class="w"> </span><span class="nv">format</span><span class="o">=</span>onnx<span class="w">  </span><span class="c1"># export official model</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>yolo<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">model</span><span class="o">=</span>path/to/best.pt<span class="w"> </span><span class="nv">format</span><span class="o">=</span>onnx<span class="w">  </span><span class="c1"># export custom trained model</span>
 </code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">from</span> <span class="nn">ultralytics</span> <span class="kn">import</span> <span class="n">YOLO</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1"># Load a model</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">model</span> <span class="o">=</span> <span class="n">YOLO</span><span class="p">(</span><span class="s2">&quot;yolov8n.pt&quot;</span><span class="p">)</span>  <span class="c1"># load an official model</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="n">model</span> <span class="o">=</span> <span class="n">YOLO</span><span class="p">(</span><span class="s2">&quot;path/to/best.pt&quot;</span><span class="p">)</span>  <span class="c1"># load a custom trained</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="c1"># Export the model</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="n">model</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;onnx&quot;</span><span class="p">)</span>
-</code></pre></div>
-</div>
-</div>
-</div>
 <p>Available YOLOv8 export formats include:</p>
 <table>
 <thead>
@@ -1044,21 +977,21 @@ training <code>data</code> and arguments as model attributes.</p>
 <h2 id="overriding-default-arguments">Overriding default arguments</h2>
 <p>Default arguments can be overriden by simply passing them as arguments in the CLI in <code>arg=value</code> pairs.</p>
 <div class="admonition tip">
-<div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><input id="__tabbed_6_3" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Example 1</label><label for="__tabbed_6_2">Example 2</label><label for="__tabbed_6_3">Example 3</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Example 1</label><label for="__tabbed_2_2">Example 2</label><label for="__tabbed_2_3">Example 3</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Train a detection model for <code>10 epochs</code> with <code>learning_rate</code> of <code>0.01</code>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>yolo<span class="w"> </span>detect<span class="w"> </span>train<span class="w"> </span><span class="nv">data</span><span class="o">=</span>coco128.yaml<span class="w"> </span><span class="nv">model</span><span class="o">=</span>yolov8n.pt<span class="w"> </span><span class="nv">epochs</span><span class="o">=</span><span class="m">10</span><span class="w"> </span><span class="nv">lr0</span><span class="o">=</span><span class="m">0</span>.01
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>yolo<span class="w"> </span>detect<span class="w"> </span>train<span class="w"> </span><span class="nv">data</span><span class="o">=</span>coco128.yaml<span class="w"> </span><span class="nv">model</span><span class="o">=</span>yolov8n.pt<span class="w"> </span><span class="nv">epochs</span><span class="o">=</span><span class="m">10</span><span class="w"> </span><span class="nv">lr0</span><span class="o">=</span><span class="m">0</span>.01
 </code></pre></div></p>
 </div>
 <div class="tabbed-block">
 <p>Predict a YouTube video using a pretrained segmentation model at image size 320:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>yolo<span class="w"> </span>segment<span class="w"> </span>predict<span class="w"> </span><span class="nv">model</span><span class="o">=</span>yolov8n-seg.pt<span class="w"> </span><span class="nv">source</span><span class="o">=</span><span class="s1">&#39;https://youtu.be/Zgi9g1ksQHc&#39;</span><span class="w"> </span><span class="nv">imgsz</span><span class="o">=</span><span class="m">320</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>yolo<span class="w"> </span>segment<span class="w"> </span>predict<span class="w"> </span><span class="nv">model</span><span class="o">=</span>yolov8n-seg.pt<span class="w"> </span><span class="nv">source</span><span class="o">=</span><span class="s1">&#39;https://youtu.be/Zgi9g1ksQHc&#39;</span><span class="w"> </span><span class="nv">imgsz</span><span class="o">=</span><span class="m">320</span>
 </code></pre></div></p>
 </div>
 <div class="tabbed-block">
 <p>Validate a pretrained detection model at batch-size 1 and image size 640:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>yolo<span class="w"> </span>detect<span class="w"> </span>val<span class="w"> </span><span class="nv">model</span><span class="o">=</span>yolov8n.pt<span class="w"> </span><span class="nv">data</span><span class="o">=</span>coco128.yaml<span class="w"> </span><span class="nv">batch</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">imgsz</span><span class="o">=</span><span class="m">640</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>yolo<span class="w"> </span>detect<span class="w"> </span>val<span class="w"> </span><span class="nv">model</span><span class="o">=</span>yolov8n.pt<span class="w"> </span><span class="nv">data</span><span class="o">=</span>coco128.yaml<span class="w"> </span><span class="nv">batch</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">imgsz</span><span class="o">=</span><span class="m">640</span>
 </code></pre></div></p>
 </div>
 </div>
@@ -1072,11 +1005,11 @@ i.e. <code>cfg=custom.yaml</code>.</p>
 <p>This will create <code>default_copy.yaml</code>, which you can then pass as <code>cfg=default_copy.yaml</code> along with any additional args,
 like <code>imgsz=320</code> in this example:</p>
 <div class="admonition example">
-<div class="tabbed-set tabbed-alternate" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">CLI</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">CLI</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>yolo<span class="w"> </span>copy-cfg
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>yolo<span class="w"> </span><span class="nv">cfg</span><span class="o">=</span>default_copy.yaml<span class="w"> </span><span class="nv">imgsz</span><span class="o">=</span><span class="m">320</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>yolo<span class="w"> </span>copy-cfg
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>yolo<span class="w"> </span><span class="nv">cfg</span><span class="o">=</span>default_copy.yaml<span class="w"> </span><span class="nv">imgsz</span><span class="o">=</span><span class="m">320</span>
 </code></pre></div>
 </div>
 </div>

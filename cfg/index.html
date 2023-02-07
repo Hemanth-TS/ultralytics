@@ -1170,6 +1170,16 @@ task.</p>
 <td>0.0</td>
 <td>use dropout regularization (classify train only)</td>
 </tr>
+<tr>
+<td>val</td>
+<td>True</td>
+<td>validate/test during training</td>
+</tr>
+<tr>
+<td>min_memory</td>
+<td>False</td>
+<td>minimize memory footprint loss function, choices=[False, True, <roll_out_thr>]</td>
+</tr>
 </tbody>
 </table>
 <h3 id="prediction">Prediction</h3>
@@ -1193,6 +1203,26 @@ given task.</p>
 <td>source</td>
 <td>'ultralytics/assets'</td>
 <td>source directory for images or videos</td>
+</tr>
+<tr>
+<td>conf</td>
+<td>0.25</td>
+<td>object confidence threshold for detection</td>
+</tr>
+<tr>
+<td>iou</td>
+<td>0.7</td>
+<td>intersection over union (IoU) threshold for NMS</td>
+</tr>
+<tr>
+<td>half</td>
+<td>False</td>
+<td>use half precision (FP16)</td>
+</tr>
+<tr>
+<td>device</td>
+<td>null</td>
+<td>device to run on, i.e. cuda device=0/1/2/3 or device=cpu</td>
 </tr>
 <tr>
 <td>show</td>
@@ -1223,6 +1253,11 @@ given task.</p>
 <td>hide_conf</td>
 <td>False</td>
 <td>hide confidence scores</td>
+</tr>
+<tr>
+<td>max_det</td>
+<td>300</td>
+<td>maximum number of detections per image</td>
 </tr>
 <tr>
 <td>vid_stride</td>
@@ -1259,6 +1294,11 @@ given task.</p>
 <td>null</td>
 <td>filter results by class, i.e. class=0, or class=[0,2,3]</td>
 </tr>
+<tr>
+<td>box</td>
+<td>True</td>
+<td>Show boxes in segmentation predictions</td>
+</tr>
 </tbody>
 </table>
 <h3 id="validation">Validation</h3>
@@ -1279,11 +1319,6 @@ validation dataset and to detect and prevent overfitting.</p>
 </thead>
 <tbody>
 <tr>
-<td>val</td>
-<td>True</td>
-<td>validate/test during training</td>
-</tr>
-<tr>
 <td>save_json</td>
 <td>False</td>
 <td>save results to JSON file</td>
@@ -1296,7 +1331,7 @@ validation dataset and to detect and prevent overfitting.</p>
 <tr>
 <td>conf</td>
 <td>0.001</td>
-<td>object confidence threshold for detection (default 0.25 predict, 0.001 val)</td>
+<td>object confidence threshold for detection</td>
 </tr>
 <tr>
 <td>iou</td>
@@ -1314,6 +1349,11 @@ validation dataset and to detect and prevent overfitting.</p>
 <td>use half precision (FP16)</td>
 </tr>
 <tr>
+<td>device</td>
+<td>null</td>
+<td>device to run on, i.e. cuda device=0/1/2/3 or device=cpu</td>
+</tr>
+<tr>
 <td>dnn</td>
 <td>False</td>
 <td>use OpenCV DNN for ONNX inference</td>
@@ -1322,6 +1362,11 @@ validation dataset and to detect and prevent overfitting.</p>
 <td>plots</td>
 <td>False</td>
 <td>show plots during training</td>
+</tr>
+<tr>
+<td>rect</td>
+<td>False</td>
+<td>support rectangular evaluation</td>
 </tr>
 </tbody>
 </table>
