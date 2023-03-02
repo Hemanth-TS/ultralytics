@@ -58,7 +58,7 @@ save_crop: False  # save cropped images with results
 hide_labels: False  # hide labels
 hide_conf: False  # hide confidence scores
 vid_stride: 1  # video frame-rate stride
-line_thickness: 3  # bounding box thickness (pixels)
+line_thickness: 1  # bounding box thickness (pixels)
 visualize: False  # visualize model features
 augment: False  # apply image augmentation to prediction sources
 agnostic_nms: False  # class-agnostic NMS
